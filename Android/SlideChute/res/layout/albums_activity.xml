@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/grid_background"
+    android:orientation="vertical" >
+    
+    
+    <TextView android:id="@+id/title"
+       android:layout_alignParentTop="true"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/select_an_album_bckg"
+       android:text="@string/albums"
+       android:paddingTop="5dip"
+       android:paddingBottom="5dip"
+       android:gravity="center_horizontal"
+       android:textSize="18sp"
+       android:textColor="@color/white" />
+       
+    <ListView android:id="@+id/albumList"
+        android:layout_below="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@drawable/divider_album_list"
+        android:dividerHeight="0dp"
+        android:fadeScrollbars="true"
+        android:fadingEdgeLength="0dip"
+        android:footerDividersEnabled="false"
+        android:scrollingCache="false"
+        android:fadingEdge="none" 
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/services_shape"
+        android:listSelector="@color/transparent"></ListView>
+    
+ <!-- Empty View -->
+<LinearLayout android:layout_centerInParent="true"
+    android:visibility="gone"
+    android:id="@+id/empty_view_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/progress_bar_window"
+    android:padding="20dip"
+    android:orientation="vertical" >
+
+    <ProgressBar android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/progress_bar_rotation"
+        android:layout_gravity="center" />
+    <TextView android:id="@+id/progressbar_loaded_photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:text="@string/loading_albums"/>
+   
+</LinearLayout>
+     
+
+</RelativeLayout>

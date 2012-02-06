@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/notification_window"
+    android:padding="20dip"
+    android:orientation="vertical" >
+
+    <TextView android:id="@+id/txt_dialog_loaded_photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:singleLine="false"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center" />
+    
+
+</LinearLayout>
