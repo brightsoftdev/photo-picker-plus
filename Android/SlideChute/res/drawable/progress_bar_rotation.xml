@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android" 
+<rotate xmlns:android="http://schemas.android.com/apk/res/android" 
     android:drawable="@drawable/progress_bar"
-    android:pivotX="50%"
-    android:pivotY="50%" >
-</animated-rotate>
+    android:pivotX="49%"
+    android:pivotY="49%" 
+    android:visible="true"
+    android:fromDegrees="0"
+    android:toDegrees="360" >
+</rotate>

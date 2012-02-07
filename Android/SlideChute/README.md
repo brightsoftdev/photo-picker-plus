@@ -20,56 +20,43 @@ Setup
 * Register the activities into the AndroidManifest.xml file:
 
     ```
-        <application
-        android:debuggable="true"
-        android:theme="@android:style/Theme.Light.NoTitleBar"
-        android:icon="@drawable/ic_launcher"
-        android:name=".app.SlideChuteApp" >
-        <service android:name="com.chute.sdk.api.GCHttpService" />
+         <application
+     android:name=".app.SlideChuteApp"
+     android:debuggable="true"
+     android:icon="@drawable/ic_launcher"
+     android:theme="@android:style/Theme.Light.NoTitleBar" >
+    <service android:name="com.chute.sdk.api.GCHttpService" />
 
-        <activity
-            android:name=".app.SlideChuteActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN" />
+    <activity
+      android:name=".app.ChooseServiceActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Light.NoTitleBar" >
+    </activity>
+    <activity
+      android:name=".app.AlbumsActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Light.NoTitleBar" >
+    </activity>
+    <activity
+      android:name="com.chute.sdk.api.authentication.GCAuthenticationActivity"
+      android:theme="@android:style/Theme.Light.NoTitleBar" >
+    </activity>
+    <activity
+      android:name=".app.PhotoStreamActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Light.NoTitleBar" >
+    </activity>
+    <activity
+      android:name=".app.PhotosActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Light.NoTitleBar" >
+    </activity>
+    <activity android:name=".app.SlideChuteActivity" >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".app.LoginActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".app.AlbumsActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.chute.sdk.api.authentication.GCAuthenticationActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".app.PhotoStreamActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".app.PhotosActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".app.CameraRollActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".app.TestActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:screenOrientation="portrait" >
+        <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         </application>
     ```    
@@ -99,7 +86,7 @@ private class OnCameraClickListener implements OnClickListener {
 		}
 	}
 </code></pre>
-When "Gallery" view is clicked, PhotoStreamActivity is called which shows grid of device photos.
+When "All photos" view is clicked, PhotoStreamActivity is called which shows grid of device photos.
 PhotoStreamActivityIntentWrapper is initialized, which represents a class that wraps the parameters needed for the intent.
 
 private final class OnPhotoStreamListener implements OnClickListener {
@@ -237,26 +224,21 @@ GCAccounts.objectMedia(getApplicationContext(), wrapper.getAccountId(),
 
 	}
 </code></pre>
-When "Cancel" button gets clicked, the activity is finished and when "Ok" button gets
-clicked, the selected images are returned as GCAccountMediaCollection in OnActivityForResult in
-SlideChuteActivity.
+When GridView item gets clicked, the selected image is returned as GAccountMediaModel in
+OnActivityForResult in SlideChuteActivity.
 <pre><code>
-private class OnOkListener implements OnClickListener {
+private final class OnGridItemClickListener implements OnItemClickListener {
 
-        @Override
-        public void onClick(View v) {
-            if (!adapter.hasSelectedItems()) {
-                Toast.makeText(getApplicationContext(), R.string.toast_choose_photos, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            PhotoActivityIntentWrapper.deliverDataToInitialActivity(PhotosActivity.this,
-                    adapter.getPhotoCollection(),
-                    albumId,
-                    accountId);
-            setResult(Activity.RESULT_OK);
-            finish();
-        }
-    }
+		@Override
+		public void onItemClick(final AdapterView<?> parent, final View view,
+				final int position, final long id) {
+			PhotoActivityIntentWrapper.deliverDataToInitialActivity(
+					PhotosActivity.this, adapter.getItem(position), albumId,
+					accountId);
+			setResult(Activity.RESULT_OK);
+			finish();
+		}
+	}
 </code></pre> 
 
 ## PhotoSelectCursorAdapter
