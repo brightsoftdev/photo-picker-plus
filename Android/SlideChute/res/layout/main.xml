@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/grid_background"
-    android:orientation="vertical" 
-    android:gravity="center">
+    android:orientation="vertical"  >
 
  
-    <Button android:text="@string/start_slide_chute" android:id="@+id/btnChoose"
+    <Button android:id="@+id/btnChoose"
+        android:padding="10dip"
+        android:layout_centerInParent="true"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/btn_icon" />
+        
+    <TextView android:id="@+id/btn_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18sp"/>
+        android:text="@string/start_slide_chute"    
+        android:textColor="@color/grey"
+        android:layout_alignTop="@+id/btnChoose"
+        android:layout_marginLeft="130dip"
+        android:layout_marginTop="12dip"
+        android:textSize="15sp"/>
     
 
-</LinearLayout>
+</RelativeLayout>
