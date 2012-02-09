@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlideChute.h"
+#import "PhotoPickerPlus.h"
 
-@interface ViewController : UIViewController <SlideChuteDelegate>
+@interface ViewController : UIViewController <photoPickerPlusDelegate>
 
 @property (nonatomic, readonly) IBOutlet UIImageView *imageView;
 

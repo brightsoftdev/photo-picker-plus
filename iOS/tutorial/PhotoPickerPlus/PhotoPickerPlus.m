@@ -1,19 +1,19 @@
 //
-//  SlideChute.m
+//  PhotoPickerPlus.m
 //  ChuteSDKDevProject
 //
 //  Created by Brandon Coston on 1/21/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SlideChute.h"
+#import "PhotoPickerPlus.h"
 
 #define ADD_SERVICES_ARRAY_NAMES [NSArray arrayWithObjects:@"Facebook", @"Instagram", @"Flickr", @"Picasa", nil]
 #define ADD_SERVICES_ARRAY_LINKS [NSArray arrayWithObjects:@"facebook", @"instagram", @"flickr", @"google", nil]
 #define messageTime 2
 
 
-@implementation SlideChute
+@implementation PhotoPickerPlus
 @synthesize delegate;
 @synthesize accountIndex;
 @synthesize sourceView, accountView, albumView, photoView;
@@ -114,20 +114,20 @@
     [photoView removeFromSuperview];
     [albumView removeFromSuperview];
     [accountView removeFromSuperview];
-    if(delegate && [delegate respondsToSelector:@selector(slideChuteControllerDidCancel:)])
-        [delegate slideChuteControllerDidCancel:self];
+    if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusControllerDidCancel:)])
+        [delegate photoPickerPlusControllerDidCancel:self];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:^(void){
-        if(delegate && [delegate respondsToSelector:@selector(slideChuteController:didFinishPickingMediaWithInfo:)])
-            [delegate slideChuteController:self didFinishPickingMediaWithInfo:info];
+        if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
+            [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:info];
     }];
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:^(void){
-        if(delegate && [delegate respondsToSelector:@selector(slideChuteControllerDidCancel:)])
-            [delegate slideChuteControllerDidCancel:self];
+        if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusControllerDidCancel:)])
+            [delegate photoPickerPlusControllerDidCancel:self];
     }];
 }
 
@@ -239,8 +239,8 @@
             [temp setObject:[UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage] scale:1 orientation:(UIImageOrientation)[[asset defaultRepresentation] orientation]] forKey:UIImagePickerControllerOriginalImage];
             [temp setObject:[[asset defaultRepresentation] url] forKey:UIImagePickerControllerReferenceURL];
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                if(delegate && [delegate respondsToSelector:@selector(slideChuteController:didFinishPickingMediaWithInfo:)])
-                    [delegate slideChuteController:self didFinishPickingMediaWithInfo:temp];
+                if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
+                    [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
                 [self setAccounts:NULL];
                 [self setAlbums:NULL];
                 [self setPhotos:NULL];
@@ -293,8 +293,8 @@
             }
             [temp setObject:asset forKey:UIImagePickerControllerMediaMetadata];
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                if(delegate && [delegate respondsToSelector:@selector(slideChuteController:didFinishPickingMediaWithInfo:)])
-                    [delegate slideChuteController:self didFinishPickingMediaWithInfo:temp];
+                if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
+                    [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
                 [self setAccounts:NULL];
                 [self setAlbums:NULL];
                 [self setPhotos:NULL];

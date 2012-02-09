@@ -1,5 +1,5 @@
 //
-//  SlideChute.h
+//  PhotoPickerPlus.h
 //  ChuteSDKDevProject
 //
 //  Created by Brandon Coston on 1/21/12.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GetChute.h"
 
-@protocol SlideChuteDelegate;
+@protocol photoPickerPlusDelegate;
 
-@interface SlideChute : GCUIBaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIWebViewDelegate>
+@interface PhotoPickerPlus : GCUIBaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIWebViewDelegate>
 
-@property (nonatomic, assign) NSObject <SlideChuteDelegate> *delegate;
+@property (nonatomic, assign) NSObject <photoPickerPlusDelegate> *delegate;
 
 @property (nonatomic) int accountIndex;
 
@@ -48,10 +48,10 @@
 
 @end
 
-@protocol SlideChuteDelegate <NSObject>
+@protocol photoPickerPlusDelegate <NSObject>
 
--(void)slideChuteController:(SlideChute *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
--(void)slideChuteControllerDidCancel:(SlideChute *)picker;
+-(void)photoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
+-(void)photoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker;
 
 @end
 

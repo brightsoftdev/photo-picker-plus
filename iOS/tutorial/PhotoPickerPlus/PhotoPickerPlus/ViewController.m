@@ -12,7 +12,7 @@
 @synthesize imageView;
 
 -(IBAction)pickPhotoSelected:(id)sender{
-    SlideChute *temp = [[SlideChute alloc] init];
+    PhotoPickerPlus *temp = [[PhotoPickerPlus alloc] init];
     [temp setDelegate:self];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self presentViewController:temp animated:YES completion:^(void){
@@ -20,12 +20,12 @@
     }];
 }
 
--(void) slideChuteControllerDidCancel:(SlideChute *)picker{
+-(void) photoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
     [self dismissViewControllerAnimated:YES completion:^(void){
         
     }];
 }
--(void) slideChuteController:(SlideChute *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void) photoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:^(void){
         [[self imageView] setImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     }];
