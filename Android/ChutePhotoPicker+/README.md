@@ -2,7 +2,7 @@
 Introduction
 ====
 
-SlideChute is an Android application which allows you browsing your albums and photos 
+PhotoPicker+ is an Android application which allows you browsing your albums and photos 
 that can be found on your device, as well as browsing albums and photos on your Facebook,
 Flickr, Picasa or Instagram account. This app includes SDK library, logs into Facebook,
 Flickr, Picasa or Instagram, displays list of albums and photo gallery of the selected album.
@@ -21,7 +21,7 @@ Setup
 
     ```
          <application
-     android:name=".app.SlideChuteApp"
+     android:name=".app.PhotoPickerPlusApp"
      android:debuggable="true"
      android:icon="@drawable/ic_launcher"
      android:theme="@android:style/Theme.Light.NoTitleBar" >
@@ -51,7 +51,7 @@ Setup
       android:screenOrientation="portrait"
       android:theme="@android:style/Theme.Light.NoTitleBar" >
     </activity>
-    <activity android:name=".app.SlideChuteActivity" >
+    <activity android:name=".app.PhotoPickerPlusActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
