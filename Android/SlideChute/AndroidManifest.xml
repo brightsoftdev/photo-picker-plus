@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.chute.android.slidechute"
+  package="com.chute.android.photopickerplus"
   android:versionCode="1"
   android:versionName="1.0" >
 
@@ -10,12 +10,11 @@
   </uses-feature>
 
   <application
-    android:name=".app.SlideChuteApp"
+    android:name=".app.PhotoPickerPlusApp"
     android:debuggable="true"
     android:icon="@drawable/ic_launcher"
     android:theme="@android:style/Theme.Light.NoTitleBar" >
-    <service android:name="com.chute.sdk.api.GCHttpService" />
-
+    <service android:name="com.chute.sdk.api.GCHttpService"/>
     <activity
       android:name=".app.ChooseServiceActivity"
       android:screenOrientation="portrait"
@@ -40,17 +39,7 @@
       android:screenOrientation="portrait"
       android:theme="@android:style/Theme.Light.NoTitleBar" >
     </activity>
-    <activity
-      android:name=".app.CameraRollActivity"
-      android:screenOrientation="portrait"
-      android:theme="@android:style/Theme.Light.NoTitleBar" >
-    </activity>
-    <activity
-      android:name=".app.TestActivity"
-      android:screenOrientation="portrait"
-      android:theme="@android:style/Theme.Light.NoTitleBar" >
-    </activity>
-    <activity android:name=".app.SlideChuteActivity" >
+    <activity android:name=".app.PhotoPickerPlusActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 

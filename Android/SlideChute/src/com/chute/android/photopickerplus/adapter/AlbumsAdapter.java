@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.adapter;
+package com.chute.android.photopickerplus.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.chute.android.slidechute.R;
+import com.chute.android.photopickerplus.R;
 import com.chute.sdk.collections.GCAccountObjectCollection;
 import com.chute.sdk.model.GCAccountObjectModel;
 import com.darko.imagedownloader.ImageLoader;

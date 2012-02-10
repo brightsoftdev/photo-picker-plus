@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.app;
+package com.chute.android.photopickerplus.app;
 
 import java.io.File;
 
@@ -15,15 +15,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.dao.MediaDAO;
-import com.chute.android.slidechute.util.AppUtil;
-import com.chute.android.slidechute.util.Constants;
-import com.chute.android.slidechute.util.PreferenceUtil;
-import com.chute.android.slidechute.util.intent.AlbumsActivityIntentWrapper;
-import com.chute.android.slidechute.util.intent.CameraRollActivityIntentWrapper;
-import com.chute.android.slidechute.util.intent.PhotoActivityIntentWrapper;
-import com.chute.android.slidechute.util.intent.PhotoStreamActivityIntentWrapper;
+import com.chute.android.photopickerplus.dao.MediaDAO;
+import com.chute.android.photopickerplus.util.AppUtil;
+import com.chute.android.photopickerplus.util.Constants;
+import com.chute.android.photopickerplus.util.PreferenceUtil;
+import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.CameraRollActivityIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
+import com.chute.android.photopickerplus.R;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.api.authentication.GCAuthenticationFactory.AccountType;

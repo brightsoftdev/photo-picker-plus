@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.app;
+package com.chute.android.photopickerplus.app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.adapter.AlbumsAdapter;
-import com.chute.android.slidechute.util.NotificationUtil;
-import com.chute.android.slidechute.util.intent.AlbumsActivityIntentWrapper;
-import com.chute.android.slidechute.util.intent.PhotoActivityIntentWrapper;
+import com.chute.android.photopickerplus.adapter.AlbumsAdapter;
+import com.chute.android.photopickerplus.util.NotificationUtil;
+import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
+import com.chute.android.photopickerplus.R;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.collections.GCAccountObjectCollection;

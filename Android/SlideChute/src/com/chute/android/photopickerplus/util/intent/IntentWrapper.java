@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.util.intent;
+package com.chute.android.photopickerplus.util.intent;
 
 import java.util.Iterator;
 

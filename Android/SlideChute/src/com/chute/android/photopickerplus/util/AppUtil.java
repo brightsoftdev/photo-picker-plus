@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.util;
+package com.chute.android.photopickerplus.util;
 
 import java.io.File;
 import java.io.IOException;

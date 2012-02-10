@@ -1,12 +1,12 @@
-package com.chute.android.slidechute.util.intent;
+package com.chute.android.photopickerplus.util.intent;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
 
-import com.chute.android.slidechute.app.ChooseServiceActivity;
-import com.chute.android.slidechute.app.PhotosActivity;
+import com.chute.android.photopickerplus.app.ChooseServiceActivity;
+import com.chute.android.photopickerplus.app.PhotosActivity;
 import com.chute.sdk.collections.GCAccountMediaCollection;
 import com.chute.sdk.model.GCAccountMediaModel;
 

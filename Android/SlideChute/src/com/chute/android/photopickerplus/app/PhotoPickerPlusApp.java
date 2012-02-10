@@ -1,16 +1,16 @@
-package com.chute.android.slidechute.app;
+package com.chute.android.photopickerplus.app;
 
 import android.app.Application;
 import android.content.Context;
 import android.util.TypedValue;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.util.PreferenceUtil;
+import com.chute.android.photopickerplus.util.PreferenceUtil;
+import com.chute.android.photopickerplus.R;
 import com.darko.imagedownloader.ImageLoader;
 
-public class SlideChuteApp extends Application {
+public class PhotoPickerPlusApp extends Application {
 
-    public static final String TAG = SlideChuteApp.class.getSimpleName();
+    public static final String TAG = PhotoPickerPlusApp.class.getSimpleName();
 
     private static ImageLoader createImageLoader(Context context) {
 	ImageLoader imageLoader = new ImageLoader(context, R.drawable.placeholder);

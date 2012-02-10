@@ -1,9 +1,9 @@
-package com.chute.android.slidechute.util;
+package com.chute.android.photopickerplus.util;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.R.id;
-import com.chute.android.slidechute.R.layout;
-import com.chute.android.slidechute.app.AlbumsActivity;
+import com.chute.android.photopickerplus.app.AlbumsActivity;
+import com.chute.android.photopickerplus.R;
+import com.chute.android.photopickerplus.R.id;
+import com.chute.android.photopickerplus.R.layout;
 
 import android.content.Context;
 import android.view.Gravity;

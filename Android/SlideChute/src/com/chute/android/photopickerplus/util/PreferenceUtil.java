@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.util;
+package com.chute.android.photopickerplus.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

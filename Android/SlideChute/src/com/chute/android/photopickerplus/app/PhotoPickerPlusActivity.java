@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.app;
+package com.chute.android.photopickerplus.app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.util.intent.SlideChuteIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.PhotoPickerPlusIntentWrapper;
+import com.chute.android.photopickerplus.R;
 
-public class SlideChuteActivity extends Activity {
+public class PhotoPickerPlusActivity extends Activity {
 
-    public static final String TAG = SlideChuteActivity.class.getSimpleName();
+    public static final String TAG = PhotoPickerPlusActivity.class.getSimpleName();
 
     /** Called when the activity is first created. */
     @Override
@@ -26,7 +26,7 @@ public class SlideChuteActivity extends Activity {
 
         @Override
         public void onClick(View v) {
-            SlideChuteIntentWrapper.startSlideChute(SlideChuteActivity.this);
+            PhotoPickerPlusIntentWrapper.startSlideChute(PhotoPickerPlusActivity.this);
         }
     }
 

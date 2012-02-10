@@ -1,11 +1,11 @@
-package com.chute.android.slidechute.util.intent;
+package com.chute.android.photopickerplus.util.intent;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.UserDictionary;
 
-import com.chute.android.slidechute.app.AlbumsActivity;
+import com.chute.android.photopickerplus.app.AlbumsActivity;
 
 public class AlbumsActivityIntentWrapper {
 

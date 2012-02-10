@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.adapter;
+package com.chute.android.photopickerplus.adapter;
 
 import java.io.File;
 
@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 
-import com.chute.android.slidechute.R;
+import com.chute.android.photopickerplus.R;
 import com.darko.imagedownloader.ImageLoader;
 
 public class PhotoSelectCursorAdapter extends CursorAdapter implements OnScrollListener {

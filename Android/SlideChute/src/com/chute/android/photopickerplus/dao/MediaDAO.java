@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.dao;
+package com.chute.android.photopickerplus.dao;
 
 import android.content.Context;
 import android.database.Cursor;

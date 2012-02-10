@@ -1,8 +1,8 @@
-package com.chute.android.slidechute.util.intent;
+package com.chute.android.photopickerplus.util.intent;
 
 import java.util.ArrayList;
 
-import com.chute.android.slidechute.app.PhotoStreamActivity;
+import com.chute.android.photopickerplus.app.PhotoStreamActivity;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.chute.android.slidechute.app;
+package com.chute.android.photopickerplus.app;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chute.android.slidechute.R;
-import com.chute.android.slidechute.adapter.PhotosAdapter;
-import com.chute.android.slidechute.util.NotificationUtil;
-import com.chute.android.slidechute.util.intent.PhotoActivityIntentWrapper;
+import com.chute.android.photopickerplus.adapter.PhotosAdapter;
+import com.chute.android.photopickerplus.util.NotificationUtil;
+import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
+import com.chute.android.photopickerplus.R;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.collections.GCAccountMediaCollection;
