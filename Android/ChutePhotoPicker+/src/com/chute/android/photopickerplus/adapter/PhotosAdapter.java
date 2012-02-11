@@ -24,11 +24,9 @@ public class PhotosAdapter extends BaseAdapter {
     public ImageLoader loader;
     private GCAccountMediaCollection collection;
     // public HashMap<Integer, GCAccountMediaModel> tick;
-    private final Activity context;
     private final DisplayMetrics displayMetrics;
 
     public PhotosAdapter(Activity context, GCAccountMediaCollection collection) {
-	this.context = context;
 	if (collection == null) {
 	    this.collection = new GCAccountMediaCollection();
 	} else {

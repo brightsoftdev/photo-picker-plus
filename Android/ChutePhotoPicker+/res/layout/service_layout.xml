@@ -42,7 +42,7 @@
             <LinearLayout android:id="@+id/camera_shots_linear"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:background="@drawable/row_selector">
                 <ImageView android:id="@+id/camera_shots_icon"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
@@ -66,7 +66,7 @@
            <LinearLayout android:id="@+id/all_photos_linear"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:background="@drawable/row_selector">
                 <ImageView android:id="@+id/all_photos_icon"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
@@ -90,7 +90,7 @@
           <LinearLayout android:id="@+id/album3_linear"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal" android:background="@drawable/row_selector">
                 <ImageView android:id="@+id/album3_icon"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
@@ -136,7 +136,7 @@
     <LinearLayout android:id="@+id/linear_fb"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"  >
+        android:orientation="horizontal"  android:background="@drawable/row_selector">
         <ImageView android:id="@+id/icon_fb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
     <LinearLayout android:id="@+id/linear_flickr"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"  >
+        android:orientation="horizontal"  android:background="@drawable/row_selector">
         <ImageView android:id="@+id/icon_flickr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
     <LinearLayout android:id="@+id/linear_instagram"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"  >
+        android:orientation="horizontal"  android:background="@drawable/row_selector">
         <ImageView android:id="@+id/icon_instagram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -205,7 +205,7 @@
     <LinearLayout android:id="@+id/linear_picasa"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"  >
+        android:orientation="horizontal"  android:background="@drawable/row_selector">
         <ImageView android:id="@+id/icon_picasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
