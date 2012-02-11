@@ -5,16 +5,21 @@
     android:background="@color/background"
     android:orientation="vertical"  >
 
- 
-    <Button android:id="@+id/btnChoose"
-        android:layout_centerInParent="true"
+    <Button android:id="@+id/btnPhotoPicker"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/btn_icon"
         android:text="@string/start_photo_picker"    
         android:textColor="@color/grey"
         android:textSize="15sp"
-        android:drawablePadding="10dp" android:paddingRight="20dp" android:paddingLeft="20dp"/>
-        
+        android:drawablePadding="10dp" android:paddingRight="20dp" android:paddingLeft="20dp" android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@+id/btnPhotoPicker"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
