@@ -3,10 +3,12 @@ package com.chute.android.photopickerplus.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.chute.android.photopickerplus.R;
+import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoPickerPlusIntentWrapper;
 
 public class PhotoPickerPlusActivity extends Activity {
@@ -32,5 +34,10 @@ public class PhotoPickerPlusActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	super.onActivityResult(requestCode, resultCode, data);
+	if (resultCode != Activity.RESULT_OK) {
+	    return;
+	}
+	final PhotoActivityIntentWrapper wrapper = new PhotoActivityIntentWrapper(data);
+	Log.d(TAG, wrapper.toString());
     }
 }

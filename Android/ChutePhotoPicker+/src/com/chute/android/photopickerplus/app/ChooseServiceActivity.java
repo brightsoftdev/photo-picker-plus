@@ -23,7 +23,6 @@ import com.chute.android.photopickerplus.util.Constants;
 import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.PreferenceUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
-import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
@@ -237,8 +236,6 @@ public class ChooseServiceActivity extends Activity {
     @Override
     protected void onNewIntent(Intent intent) {
 	super.onNewIntent(intent);
-	final PhotoActivityIntentWrapper wrapper = new PhotoActivityIntentWrapper(intent);
-	Log.d(TAG, wrapper.toString());
 	setResult(Activity.RESULT_OK, new Intent().putExtras(intent.getExtras()));
 	finish();
     }
