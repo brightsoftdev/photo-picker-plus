@@ -1,4 +1,4 @@
-SlideChute
+PhotoPickerPlus
 ==============
 
 no external dependancies beyond Chute SDK (version 1.120206 or newer)
@@ -10,7 +10,7 @@ This class allows you to pick a photo from the any supported online source such 
 
 Screenshots
 -----------
-![screen1](https://github.com/chute/chute-ios-components/raw/master/components/SlideChute/screenshots/screen1.png)![screen2](https://github.com/chute/chute-ios-components/raw/master/components/SlideChute/screenshots/screen2.png)![screen3](https://github.com/chute/chute-ios-components/raw/master/components/SlideChute/screenshots/screen3.png)![screen4](https://github.com/chute/chute-ios-components/raw/master/components/SlideChute/screenshots/screen4.png)![screen5](https://github.com/chute/chute-ios-components/raw/master/components/SlideChute/screenshots/screen5.png)
+![screen1](https://github.com/chute/photo-picker-plus/raw/master/iOS/PhotoPickerPlus/screenshots/screen1.png)![screen2](https://github.com/chute/photo-picker-plus/raw/master/iOS/PhotoPickerPlus/screenshots/screen2.png)![screen3](https://github.com/chute/photo-picker-plus/raw/master/iOS/PhotoPickerPlus/screenshots/screen3.png)![screen4](https://github.com/chute/photo-picker-plus/raw/master/iOS/PhotoPickerPlus/screenshots/screen4.png)![screen5](https://github.com/chute/photo-picker-plus/raw/master/iOS/PhotoPickerPlus/screenshots/screen5.png)
 
 Subclassing
 -----------
@@ -20,9 +20,9 @@ While subclassing this component is possible, it is not really recommended.  If 
 Initialization
 --------------
 
- *   delegate - `NSObject <SlideChuteDelegate>` - The delegate for this component.  It should implement two methods.
-    *  `-(void)slideChuteController:(SlideChute *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;`
-    *  `-(void)slideChuteControllerDidCancel:(SlideChute *)picker;`
+ *   delegate - `NSObject <PhotoPickerPlusDelegate>` - The delegate for this component.  It should implement two methods.
+    *  `-(void)PhotoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;`
+    *  `-(void)PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker;`
 
 
 Implementation
@@ -30,18 +30,18 @@ Implementation
 
 
 ```objective-c
-    -(void)showSlideChute{
-	    SlideChute *temp = [[SlideChute alloc] init];
+    -(void)showPhotoPickerPlus{
+	    PhotoPickerPlus *temp = [[PhotoPickerPlus alloc] init];
 	    [temp setDelegate:self];
 	    self.modalPresentationStyle = UIModalPresentationCurrentContext;
 	    [self presentModalViewController:temp animated:NO];
 	    [temp release];
 	}
-	-(void)slideChuteControllerDidCancel:(SlideChute *)picker{
+	-(void)PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
 	    //place code for when the user cancels here
 	    //such as removing the picker from the screen
 	}
-	-(void)slideChuteController:(SlideChute *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+	-(void)PhotoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
 	    //place code for when the user picks a photo here and do any
 	    //additional work such as removing the picker from the screen
 	}

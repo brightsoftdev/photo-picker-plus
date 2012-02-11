@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GetChute.h"
 
-@protocol photoPickerPlusDelegate;
+@protocol PhotoPickerPlusDelegate;
 
 @interface PhotoPickerPlus : GCUIBaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIWebViewDelegate>
 
-@property (nonatomic, assign) NSObject <photoPickerPlusDelegate> *delegate;
+@property (nonatomic, assign) NSObject <PhotoPickerPlusDelegate> *delegate;
 
 @property (nonatomic) int accountIndex;
 
@@ -48,10 +48,10 @@
 
 @end
 
-@protocol photoPickerPlusDelegate <NSObject>
+@protocol PhotoPickerPlusDelegate <NSObject>
 
--(void)photoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
--(void)photoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker;
+-(void)PhotoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
+-(void)PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker;
 
 @end
 
