@@ -14,7 +14,9 @@ import com.chute.android.photopickerplus.R;
 import com.chute.android.photopickerplus.adapter.PhotoSelectCursorAdapter;
 import com.chute.android.photopickerplus.dao.MediaDAO;
 import com.chute.android.photopickerplus.util.NotificationUtil;
+import com.chute.android.photopickerplus.util.intent.IntentUtil;
 import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
+import com.chute.sdk.model.GCAccountMediaModel;
 
 public class PhotoStreamActivity extends Activity {
 
@@ -72,12 +74,19 @@ public class PhotoStreamActivity extends Activity {
 	@Override
 	public void onItemClick(final AdapterView<?> parent, final View view, final int position,
 		final long id) {
-	    final PhotoStreamActivityIntentWrapper wrapper = new PhotoStreamActivityIntentWrapper(
-		    new Intent());
-	    wrapper.setAssetPath(gridAdapter.getItem(position));
-	    setResult(RESULT_OK, wrapper.getIntent());
+		IntentUtil.deliverDataToInitialActivity(PhotoStreamActivity.this, getPhotoModel(gridAdapter.getItem(position)));
+	    setResult(RESULT_OK);
 	    finish();
 	}
+    }
+    
+    public GCAccountMediaModel getPhotoModel(final String path) {
+    	final GCAccountMediaModel model = new GCAccountMediaModel();
+    	model.setLargeUrl(path);
+    	model.setThumbUrl(path);
+    	model.setUrl(path);
+    	return model;
+    	
     }
 
 }
