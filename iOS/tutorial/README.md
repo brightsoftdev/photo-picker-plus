@@ -3,15 +3,24 @@ Photo Picker+
 
 This tutorial will show you how to use the Photo Picker Plus component to present the user with a multi-service photo picker.  This tutorial was written using version 5.0 of the iOS SDK and version 4.2 of Xcode.  Uses Chute SDK version 1.0.4 or newer (the version number can be found in the GCConstants.h file).  Some changes may need to be made for other software versions.
 
+![image1](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/1.png)
+![image2](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/2.png)
+![image3](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/3.png)
+
 Create A New Project
 --------------------
 Start by creating a new Xcode project.  A single view application will be easiest to modify for this tutorial.  You can choose whatever name you like, I'll call it PhotoPickerPlus.  Be sure that “Use Automatic Reference Counting” is unchecked as the SDK does not currently support ARC.
+
+![image4](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/4.png)
 
 Preparation
 -----------
 1.  Download the Chute SDK from https://github.com/chute/Chute-SDK
 2.  Download the PhotoPickerPlus component from https://github.com/chute/photo-picker-plus/tree/master/iOS/PhotoPickerPlus
 3.  Create a Chute developer account and make a new app in Chute at http://apps.getchute.com/
+
+![image5](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/5.png)
+![image6](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/6.png)
 
 Add The SDK And Component And Link Dependancies
 -----------------------------------------------
@@ -26,6 +35,8 @@ Add The SDK And Component And Link Dependancies
      *  MobileCoreServices
      *  Security
      *  SystemConfiguration
+
+![image7](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/7.png)
 
 At this point you may want to try running the project to make sure that everything is added ok.  You will get a few warnings, but if there are no errors then everything should be correctly added and linked.
 
@@ -93,6 +104,8 @@ viewController.m
 Create The UI
 -------------
 Open viewController.xib and add an UIImageView covering most of the view and a UIButton below it.  Hook the UIImageView up to the imageView object and hook up the pickPhotoSelected method to the touchUpInside event of the button.  You can also title the button whatever you want.  I called mine pick photo.  You also probably want to set the mode for the UIImageView to aspectFit.
+
+![image8](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/8.png)
 
 Conclusion
 ----------
