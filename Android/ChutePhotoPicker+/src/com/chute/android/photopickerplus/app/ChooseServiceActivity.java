@@ -23,11 +23,13 @@ import com.chute.android.photopickerplus.util.Constants;
 import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.PreferenceUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
+import com.chute.android.photopickerplus.util.intent.IntentUtil;
 import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.api.authentication.GCAuthenticationFactory.AccountType;
 import com.chute.sdk.collections.GCAccountsCollection;
+import com.chute.sdk.model.GCAccountMediaModel;
 import com.chute.sdk.model.GCAccountModel;
 import com.chute.sdk.model.GCAccountStore;
 import com.chute.sdk.model.GCHttpRequestParameters;
@@ -171,9 +173,7 @@ public class ChooseServiceActivity extends Activity {
 		GCAccounts.all(getApplicationContext(), new AccountsCallback()).executeAsync();
 	    }
 	    if (requestCode == PhotoStreamActivityIntentWrapper.ACTIVITY_FOR_RESULT_STREAM_KEY) {
-		PhotoStreamActivityIntentWrapper photoStreamWrapper = new PhotoStreamActivityIntentWrapper(
-			data);
-		String path = photoStreamWrapper.getAssetPath();
+		finish();
 	    } else if (requestCode == Constants.CAMERA_PIC_REQUEST) {
 		// Bitmap image = (Bitmap) data.getExtras().get("data");
 		String path;
@@ -184,6 +184,12 @@ public class ChooseServiceActivity extends Activity {
 		    Log.e(TAG, "Bug " + data.getData().getPath());
 		    path = AppUtil.getPath(getApplicationContext(), data.getData());
 		}
+		Log.d(TAG, path);
+		final GCAccountMediaModel model = new GCAccountMediaModel();
+		model.setLargeUrl(path);
+		model.setThumbUrl(path);
+		model.setUrl(path);
+		IntentUtil.deliverDataToInitialActivity(this, model);
 	    }
 	}
     }
