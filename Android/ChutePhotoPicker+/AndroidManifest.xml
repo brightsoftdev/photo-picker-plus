@@ -14,8 +14,7 @@
     <application
         android:name=".app.PhotoPickerPlusApp"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        android:label="@string/app_name" >
         <service android:name="com.chute.sdk.api.GCHttpService" />
 
         <activity
@@ -52,7 +51,6 @@
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
