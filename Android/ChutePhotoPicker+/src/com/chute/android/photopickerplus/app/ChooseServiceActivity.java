@@ -59,7 +59,7 @@ public class ChooseServiceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.service_layout);
-
+	
 	loader = ImageLoader.get(ChooseServiceActivity.this);
 
 	txtFacebook = (TextView) findViewById(R.id.txt_facebook);
