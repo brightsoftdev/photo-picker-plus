@@ -7,7 +7,7 @@ that can be found on your device, as well as browsing albums and photos on your 
 Flickr, Picasa or Instagram account. This app includes SDK library, logs into Facebook,
 Flickr, Picasa or Instagram, displays list of albums and photo gallery of the selected album.
 
-![SS_Slidechute1](https://github.com/chute/Chute-Android-Kitchen-Sink/raw/master/SlideChute/screenshots/SS_Slidechute1.png)![SS_Slidechute2](https://github.com/chute/Chute-Android-Kitchen-Sink/raw/master/SlideChute/screenshots/SS_Slidechute2.png)![SS_Slidechute3](https://github.com/chute/Chute-Android-Kitchen-Sink/raw/master/SlideChute/screenshots/SS_Slidechute3.png)![SS_Slidechute4](https://github.com/chute/Chute-Android-Kitchen-Sink/raw/master/SlideChute/screenshots/SS_Slidechute4.png)
+![SS_Slidechute1](https://github.com/chute/photo-picker-plus/raw/master/Android/ChutePhotoPicker+/screenshots/SS_Slidechute1.png)![SS_Slidechute2](https://github.com/chute/photo-picker-plus/raw/master/Android/ChutePhotoPicker+/screenshots/SS_Slidechute2.png)![SS_Slidechute3](https://github.com/chute/photo-picker-plus/raw/master/Android/ChutePhotoPicker+/screenshots/SS_Slidechute3.png)![SS_Slidechute4](https://github.com/chute/photo-picker-plus/raw/master/Android/ChutePhotoPicker+/screenshots/SS_Slidechute4.png)
 
 Setup
 ====
