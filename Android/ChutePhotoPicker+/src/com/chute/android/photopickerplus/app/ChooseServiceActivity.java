@@ -47,14 +47,12 @@ public class ChooseServiceActivity extends Activity {
     private LinearLayout picasa;
     private LinearLayout instagram;
     private LinearLayout flickr;
-    private LinearLayout all_photos;
-    private LinearLayout camera_photos;
+    private LinearLayout allPhotos;
+    private LinearLayout cameraPhotos;
     private ImageView img_all_photos;
     private ImageView img_camera_photos;
     private AccountType accountType;
     private ImageLoader loader;
-    private final boolean cameraCursor = true;
-    private final boolean photosCursor = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +79,11 @@ public class ChooseServiceActivity extends Activity {
 	instagram = (LinearLayout) findViewById(R.id.linear_instagram);
 	instagram.setTag(AccountType.INSTAGRAM);
 
-	all_photos = (LinearLayout) findViewById(R.id.all_photos_linear);
-	all_photos.setOnClickListener(new OnPhotoStreamListener());
+	allPhotos = (LinearLayout) findViewById(R.id.all_photos_linear);
+	allPhotos.setOnClickListener(new OnPhotoStreamListener());
 
-	camera_photos = (LinearLayout) findViewById(R.id.camera_shots_linear);
-	camera_photos.setOnClickListener(new OnCameraRollListener());
+	cameraPhotos = (LinearLayout) findViewById(R.id.camera_shots_linear);
+	cameraPhotos.setOnClickListener(new OnCameraRollListener());
 
 	img_all_photos = (ImageView) findViewById(R.id.all_photos_icon);
 	img_camera_photos = (ImageView) findViewById(R.id.camera_shots_icon);
@@ -135,7 +133,6 @@ public class ChooseServiceActivity extends Activity {
 	    if (accountType == null) {
 		return;
 	    }
-
 	    for (GCAccountModel accountModel : responseData) {
 		if (accountModel.getType().equalsIgnoreCase(accountType.getName())) {
 		    PreferenceUtil.get().setNameForAccount(accountType,
