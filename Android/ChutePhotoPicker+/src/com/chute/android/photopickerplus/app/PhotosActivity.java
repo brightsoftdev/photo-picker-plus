@@ -67,7 +67,6 @@ public class PhotosActivity extends Activity {
 	public void onParserException(int responseCode, Throwable exception) {
 
 	}
-
     }
 
     private final class OnGridItemClickListener implements OnItemClickListener {

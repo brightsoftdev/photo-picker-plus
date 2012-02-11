@@ -1,17 +1,13 @@
 package com.chute.android.photopickerplus.util;
 
-import com.chute.android.photopickerplus.app.AlbumsActivity;
-import com.chute.android.photopickerplus.R;
-import com.chute.android.photopickerplus.R.id;
-import com.chute.android.photopickerplus.R.layout;
-
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.chute.android.photopickerplus.R;
 
 public class NotificationUtil {
     public static final String TAG = NotificationUtil.class.getSimpleName();
@@ -51,28 +47,25 @@ public class NotificationUtil {
 	makeToast(context, message + ", " + context.getString(R.string.parsing_exception));
     }
 
+    public static void showAdapterToast(Context context, String message) {
+	View layout = LayoutInflater.from(context).inflate(R.layout.dialog_loaded_photos, null);
+	TextView toastText = (TextView) layout.findViewById(R.id.txt_dialog_loaded_photos);
+	toastText.setText(message);
+	Toast toast = new Toast(context);
+	toast.setGravity(Gravity.CENTER, 0, 0);
+	toast.setDuration(Toast.LENGTH_SHORT);
+	toast.setView(layout);
+	toast.show();
+    }
+
     public static void showPhotosAdapterToast(Context context, int count) {
-        View layout = LayoutInflater.from(context).inflate(R.layout.dialog_loaded_photos, null);
-        String text = "Loaded " + count + " photos in this album";
-        TextView toastText = (TextView) layout.findViewById(R.id.txt_dialog_loaded_photos);
-        toastText.setText(text);
-        Toast toast = new Toast(context);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();
+	String text = String.format("Loaded %s photos in this album", count);
+	showAdapterToast(context, text);
     }
-    
+
     public static void showAlbumsAdapterToast(Context context, int count) {
-        View layout = LayoutInflater.from(context).inflate(R.layout.dialog_loaded_photos, null);
-        String text = "Loaded " + count + " albums";
-        TextView toastText = (TextView) layout.findViewById(R.id.txt_dialog_loaded_photos);
-        toastText.setText(text);
-        Toast toast = new Toast(context);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();
+	String text = String.format("Loaded %s albums", count);
+	showAdapterToast(context, text);
     }
-    
+
 }
