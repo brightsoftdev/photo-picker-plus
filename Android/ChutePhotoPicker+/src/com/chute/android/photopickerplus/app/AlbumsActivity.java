@@ -8,11 +8,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.chute.android.photopickerplus.R;
 import com.chute.android.photopickerplus.adapter.AlbumsAdapter;
 import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
-import com.chute.android.photopickerplus.R;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.collections.GCAccountObjectCollection;
