@@ -23,7 +23,6 @@ import com.chute.android.photopickerplus.util.Constants;
 import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.PreferenceUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
-import com.chute.android.photopickerplus.util.intent.CameraRollActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
 import com.chute.sdk.api.GCHttpCallback;
@@ -189,10 +188,6 @@ public class ChooseServiceActivity extends Activity {
 		    Log.e(TAG, "Bug " + data.getData().getPath());
 		    path = AppUtil.getPath(getApplicationContext(), data.getData());
 		}
-	    } else if (requestCode == CameraRollActivityIntentWrapper.ACTIVITY_FOR_RESULT_CAMERA_KEY) {
-		CameraRollActivityIntentWrapper cameraRollwrapper = new CameraRollActivityIntentWrapper(
-			data);
-		String path = cameraRollwrapper.getAssetPath();
 	    }
 	}
     }
@@ -223,7 +218,7 @@ public class ChooseServiceActivity extends Activity {
 	public void onClick(View v) {
 	    PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
 		    ChooseServiceActivity.this);
-	    streamWrapper.setPhotoBoolean(photosCursor);
+	    streamWrapper.setFilterType(PhotoStreamActivityIntentWrapper.TYPE_ALL_PHOTOS);
 	    streamWrapper.startActivityForResult(ChooseServiceActivity.this,
 		    PhotoStreamActivityIntentWrapper.ACTIVITY_FOR_RESULT_STREAM_KEY);
 	}
@@ -233,11 +228,11 @@ public class ChooseServiceActivity extends Activity {
 
 	@Override
 	public void onClick(View v) {
-	    CameraRollActivityIntentWrapper cameraWrapper = new CameraRollActivityIntentWrapper(
+	    PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
 		    ChooseServiceActivity.this);
-	    cameraWrapper.setCameraBoolean(cameraCursor);
-	    cameraWrapper.startActivityForResult(ChooseServiceActivity.this,
-		    CameraRollActivityIntentWrapper.ACTIVITY_FOR_RESULT_CAMERA_KEY);
+	    streamWrapper.setFilterType(PhotoStreamActivityIntentWrapper.TYPE_CAMERA_ROLL);
+	    streamWrapper.startActivityForResult(ChooseServiceActivity.this,
+		    PhotoStreamActivityIntentWrapper.ACTIVITY_FOR_RESULT_STREAM_KEY);
 	}
 
     }

@@ -10,62 +10,64 @@ import com.chute.android.photopickerplus.app.PhotoStreamActivity;
 
 public class PhotoStreamActivityIntentWrapper {
 
-	public static final int ACTIVITY_FOR_RESULT_STREAM_KEY = 113;
+    public static final int ACTIVITY_FOR_RESULT_STREAM_KEY = 113;
 
-	private static final String EXTRA_KEY_PATH_LIST = "key_path_list";
-	private static final String EXTRA_KEY_PATH = "key_path";
-	private static final String EXTRA_KEY_CURSOR_PHOTOS = "cursor_photos";
+    private static final String EXTRA_KEY_PATH_LIST = "key_path_list";
+    private static final String EXTRA_KEY_PATH = "key_path";
+    private static final String EXTRA_KEY_CURSOR_PHOTOS = "cursor_photos";
 
-	@SuppressWarnings("unused")
-	private static final String TAG = PhotoStreamActivityIntentWrapper.class
-			.getSimpleName();
+    public static final int TYPE_CAMERA_ROLL = 0;
+    public static final int TYPE_ALL_PHOTOS = 1;
 
-	private final Intent intent;
+    @SuppressWarnings("unused")
+    private static final String TAG = PhotoStreamActivityIntentWrapper.class.getSimpleName();
 
-	public PhotoStreamActivityIntentWrapper(Intent intent) {
-		super();
-		this.intent = intent;
-	}
+    private final Intent intent;
 
-	public PhotoStreamActivityIntentWrapper(Context packageContext, Class<?> cls) {
-		super();
-		intent = new Intent(packageContext, cls);
-	}
+    public PhotoStreamActivityIntentWrapper(Intent intent) {
+	super();
+	this.intent = intent;
+    }
 
-	public PhotoStreamActivityIntentWrapper(Context packageContext) {
-		super();
-		intent = new Intent(packageContext, PhotoStreamActivity.class);
-	}
+    public PhotoStreamActivityIntentWrapper(Context packageContext, Class<?> cls) {
+	super();
+	intent = new Intent(packageContext, cls);
+    }
 
-	public Intent getIntent() {
-		return intent;
-	}
+    public PhotoStreamActivityIntentWrapper(Context packageContext) {
+	super();
+	intent = new Intent(packageContext, PhotoStreamActivity.class);
+    }
 
-	public void setAssetPathList(ArrayList<String> pathList) {
-		intent.putStringArrayListExtra(EXTRA_KEY_PATH_LIST, pathList);
-	}
+    public Intent getIntent() {
+	return intent;
+    }
 
-	public ArrayList<String> getAssetPathList() {
-		return intent.getExtras().getStringArrayList(EXTRA_KEY_PATH_LIST);
-	}
+    public void setAssetPathList(ArrayList<String> pathList) {
+	intent.putStringArrayListExtra(EXTRA_KEY_PATH_LIST, pathList);
+    }
 
-	public void setAssetPath(String path) {
-		intent.putExtra(EXTRA_KEY_PATH, path);
-	}
+    public ArrayList<String> getAssetPathList() {
+	return intent.getExtras().getStringArrayList(EXTRA_KEY_PATH_LIST);
+    }
 
-	public String getAssetPath() {
-		return intent.getExtras().getString(EXTRA_KEY_PATH);
-	}
+    public void setAssetPath(String path) {
+	intent.putExtra(EXTRA_KEY_PATH, path);
+    }
 
-	public Boolean getPhotoBoolean() {
-		return intent.getExtras().getBoolean(EXTRA_KEY_CURSOR_PHOTOS);
-	}
+    public String getAssetPath() {
+	return intent.getExtras().getString(EXTRA_KEY_PATH);
+    }
 
-	public void setPhotoBoolean(Boolean photoBoolean) {
-		intent.putExtra(EXTRA_KEY_CURSOR_PHOTOS, photoBoolean);
-	}
+    public int getFilterType() {
+	return intent.getExtras().getInt(EXTRA_KEY_CURSOR_PHOTOS);
+    }
 
-	public void startActivityForResult(Activity context, int code) {
-		context.startActivityForResult(intent, code);
-	}
+    public void setFilterType(int type) {
+	intent.putExtra(EXTRA_KEY_CURSOR_PHOTOS, type);
+    }
+
+    public void startActivityForResult(Activity context, int code) {
+	context.startActivityForResult(intent, code);
+    }
 }
