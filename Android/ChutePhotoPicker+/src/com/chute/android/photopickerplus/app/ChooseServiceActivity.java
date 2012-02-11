@@ -218,7 +218,7 @@ public class ChooseServiceActivity extends Activity {
 
 	@Override
 	public void onClick(View v) {
-	    PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
+	    final PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
 		    ChooseServiceActivity.this);
 	    streamWrapper.setFilterType(PhotoStreamActivityIntentWrapper.TYPE_ALL_PHOTOS);
 	    streamWrapper.startActivityForResult(ChooseServiceActivity.this,
@@ -230,7 +230,7 @@ public class ChooseServiceActivity extends Activity {
 
 	@Override
 	public void onClick(View v) {
-	    PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
+	    final PhotoStreamActivityIntentWrapper streamWrapper = new PhotoStreamActivityIntentWrapper(
 		    ChooseServiceActivity.this);
 	    streamWrapper.setFilterType(PhotoStreamActivityIntentWrapper.TYPE_CAMERA_ROLL);
 	    streamWrapper.startActivityForResult(ChooseServiceActivity.this,
@@ -254,21 +254,20 @@ public class ChooseServiceActivity extends Activity {
 		txtPicasa.setText(PreferenceUtil.get().getAccountName(AccountType.PICASA));
 
 	    }
-	    if (PreferenceUtil.get().hasAccountId(AccountType.FACEBOOK)) {
-		if (PreferenceUtil.get().hasAccountName(AccountType.FACEBOOK)) {
-		    txtFacebook.setText(PreferenceUtil.get().getAccountName(AccountType.FACEBOOK));
-		}
+	}
+	if (PreferenceUtil.get().hasAccountId(AccountType.FACEBOOK)) {
+	    if (PreferenceUtil.get().hasAccountName(AccountType.FACEBOOK)) {
+		txtFacebook.setText(PreferenceUtil.get().getAccountName(AccountType.FACEBOOK));
 	    }
-	    if (PreferenceUtil.get().hasAccountId(AccountType.FLICKR)) {
-		if (PreferenceUtil.get().hasAccountName(AccountType.FLICKR)) {
-		    txtFlickr.setText(PreferenceUtil.get().getAccountName(AccountType.FLICKR));
-		}
+	}
+	if (PreferenceUtil.get().hasAccountId(AccountType.FLICKR)) {
+	    if (PreferenceUtil.get().hasAccountName(AccountType.FLICKR)) {
+		txtFlickr.setText(PreferenceUtil.get().getAccountName(AccountType.FLICKR));
 	    }
-	    if (PreferenceUtil.get().hasAccountId(AccountType.INSTAGRAM)) {
-		if (PreferenceUtil.get().hasAccountName(AccountType.INSTAGRAM)) {
-		    txtInstagram
-			    .setText(PreferenceUtil.get().getAccountName(AccountType.INSTAGRAM));
-		}
+	}
+	if (PreferenceUtil.get().hasAccountId(AccountType.INSTAGRAM)) {
+	    if (PreferenceUtil.get().hasAccountName(AccountType.INSTAGRAM)) {
+		txtInstagram.setText(PreferenceUtil.get().getAccountName(AccountType.INSTAGRAM));
 	    }
 	}
     }
