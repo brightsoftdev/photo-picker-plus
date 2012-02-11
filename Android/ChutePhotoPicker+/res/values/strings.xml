@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, SlideChuteActivity!</string>
-    <string name="app_name">SlideChute</string>
-
+    <string name="app_name">Photo Picker Plus</string>
     <!-- Account type -->
     <string name="facebook">Facebook</string>
     <string name="flickr">Flickr</string>
@@ -39,5 +37,6 @@
     
     <!-- Toast -->
     <string name="toast_choose_photos">Please select photos</string>
+    <string name="toast_feature_camera">Your device doesn\'t have a camera</string>
 
 </resources>

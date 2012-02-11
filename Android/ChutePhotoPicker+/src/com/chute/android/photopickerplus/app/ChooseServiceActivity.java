@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,15 +16,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chute.android.photopickerplus.R;
 import com.chute.android.photopickerplus.dao.MediaDAO;
 import com.chute.android.photopickerplus.util.AppUtil;
 import com.chute.android.photopickerplus.util.Constants;
+import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.PreferenceUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.CameraRollActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoStreamActivityIntentWrapper;
-import com.chute.android.photopickerplus.R;
 import com.chute.sdk.api.GCHttpCallback;
 import com.chute.sdk.api.account.GCAccounts;
 import com.chute.sdk.api.authentication.GCAuthenticationFactory.AccountType;
@@ -52,8 +54,8 @@ public class ChooseServiceActivity extends Activity {
     private ImageView img_camera_photos;
     private AccountType accountType;
     private ImageLoader loader;
-    private boolean cameraCursor = true;
-    private boolean photosCursor = true;
+    private final boolean cameraCursor = true;
+    private final boolean photosCursor = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,6 +201,10 @@ public class ChooseServiceActivity extends Activity {
 
 	@Override
 	public void onClick(View v) {
+	    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+		NotificationUtil.makeToast(getApplicationContext(), R.string.toast_feature_camera);
+		return;
+	    }
 	    final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    if (AppUtil.hasImageCaptureBug() == false) {
 		intent.putExtra(MediaStore.EXTRA_OUTPUT,
