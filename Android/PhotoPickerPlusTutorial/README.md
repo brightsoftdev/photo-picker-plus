@@ -70,17 +70,17 @@ Usage
 This class is the extended Application class. It is registered inside the "application" tag in the manifest and is used for initializing the utility classes used in the component
 PhotoPickerPlusTutorialApp can extend PhotoPickerPlusApp like shown in this tutorial
 
-<code><pre>
+<pre><code>
 public class PhotoPickerPlusTutorialApp extends PhotoPickerPlusApp {
 
 }
-</pre></code>
+</code></pre>
 
 This way the developer can use his own methods and code inside the application class. 
 
 If the developer decides to extend the application class instead of PhotoPickerPlusApp he must copy the all the code below into it
 
-<code><pre>
+<pre><code>
 public class PhotoPickerPlusTutorialApp extends Application {
     private static ImageLoader createImageLoader(Context context) {
 	ImageLoader imageLoader = new ImageLoader(context, R.drawable.placeholder);
@@ -108,21 +108,21 @@ public class PhotoPickerPlusTutorialApp extends Application {
     }
 
 }
-</pre></code>
+</code></pre>
 
 PhotoPickerPlusTutorialApp can also be neglected by registering PhotoPickerPlusApp into the manifest instead of PhotoPickerPlusTutoiralApp if the developer doesn't have the need for extending the application class.
 
 ##PhotoPickerPlusTutorialActivity.java 
 This class is an Activity class. It contains a Button and an ImageView. When the button is clicked, PhotoPickerPlusIntentWrapper starts ChooseServiceActivity. PhotoPickerPlusIntentWrapper is a wrapper class that wraps the parameters needed for the intent.
 
-<code><pre>
+<pre><code>
 private class OnPhotoPickerClickListener implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 	    PhotoPickerPlusIntentWrapper.startPhotoPicker(PhotoPickerPlusTutorialActivity.this);
 	}
     }
-</pre></code>
+</code></pre>
 
 ChooseServiceActivity contains a list of services and device photos albums is shown. You can authenticate using Facebook, Flickr, Instagram and Picasa, browse albums and photos, browse device photos as well as take a photo with the camera. 
 After clicking a photo, a result is returned to the activity that started the component where the selected photo is displayed using the ImageLoader.
