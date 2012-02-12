@@ -12,7 +12,7 @@ Screenshots
 Implementation
 ====
 
-Follow the PhotoPicker+ tutorial for how to setup and use the component.
+Follow the PhotoPicker+ tutorial on how to setup and use the component.
 
 Modifying the component
 ====

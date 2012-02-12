@@ -53,16 +53,25 @@ public class AlbumsActivity extends Activity {
 
 	@Override
 	public void onHttpException(GCHttpRequestParameters params, Throwable exception) {
+	    NotificationUtil.makeConnectionProblemToast(getApplicationContext());
+	    toggleEmptyViewErrorMessage();
 	}
 
 	@Override
 	public void onHttpError(int responseCode, String statusMessage) {
+	    NotificationUtil.makeServerErrorToast(getApplicationContext());
+	    toggleEmptyViewErrorMessage();
 	}
 
 	@Override
 	public void onParserException(int responseCode, Throwable exception) {
+	    NotificationUtil.makeParserErrorToast(getApplicationContext());
+	    toggleEmptyViewErrorMessage();
 	}
 
+	public void toggleEmptyViewErrorMessage() {
+	    findViewById(R.id.empty_view_layout).setVisibility(View.GONE);
+	}
     }
 
     private final class OnAlbumsClickListener implements OnItemClickListener {
