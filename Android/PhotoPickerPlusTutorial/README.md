@@ -68,7 +68,7 @@ Usage
 
 ##PhotoPickerPlusTutorialApp.java 
 This class is the extended Application class. It is registered inside the "application" tag in the manifest and is used for initializing the utility classes used in the component
-PhotoPickerPlusTutorialApp can extend PhotoPickerPlusApp like shown in this tutorial:
+PhotoPickerPlusTutorialApp can extend PhotoPickerPlusApp like shown in this tutorial
 
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends PhotoPickerPlusApp {
@@ -78,7 +78,7 @@ public class PhotoPickerPlusTutorialApp extends PhotoPickerPlusApp {
 
 This way the developer can use his own methods and code inside the application class. 
 
-If the developer decides to extend the application class instead of PhotoPickerPlusApp he must copy the all the code below into it:
+If the developer decides to extend the application class instead of PhotoPickerPlusApp he must copy the all the code below into it
 
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends Application {
