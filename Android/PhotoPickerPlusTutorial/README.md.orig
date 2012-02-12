@@ -79,6 +79,11 @@ This way the developer can use his own methods and code inside the application c
 If the developer decides to extend the application class instead of PhotoPickerPlusApp he must copy the all the code below into it:
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends Application {
+<<<<<<< HEAD
+=======
+    public static final String TAG = PhotoPickerPlusTutorialApp.class.getSimpleName();
+>>>>>>> 94dd044cb33254681afd6f6a9624d6d6e9c9d242
+
     private static ImageLoader createImageLoader(Context context) {
 	ImageLoader imageLoader = new ImageLoader(context, R.drawable.placeholder);
 	imageLoader.setRequiredSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
