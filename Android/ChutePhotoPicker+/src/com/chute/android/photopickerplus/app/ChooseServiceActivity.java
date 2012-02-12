@@ -1,6 +1,7 @@
 package com.chute.android.photopickerplus.app;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -176,17 +177,26 @@ public class ChooseServiceActivity extends Activity {
 		finish();
 	    } else if (requestCode == Constants.CAMERA_PIC_REQUEST) {
 		// Bitmap image = (Bitmap) data.getExtras().get("data");
-		String path;
-		if (AppUtil.hasImageCaptureBug() == false
-			&& AppUtil.getTempFile(getApplicationContext()).length() > 0) {
-		    path = AppUtil.getTempFile(getApplicationContext()).getPath();
+		String path = "";
+		File tempFile = AppUtil.getTempFile(getApplicationContext());
+		if (AppUtil.hasImageCaptureBug() == false && tempFile.length() > 0) {
+		    Uri u;
+		    try {
+			u = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(
+				getContentResolver(), tempFile.getAbsolutePath(), null, null));
+			tempFile.delete();
+			path = u.toString();
+		    } catch (FileNotFoundException e) {
+			Log.d(TAG, "", e);
+		    }
 		} else {
 		    Log.e(TAG, "Bug " + data.getData().getPath());
-		    path = AppUtil.getPath(getApplicationContext(), data.getData());
+		    path = Uri.fromFile(
+			    new File(AppUtil.getPath(getApplicationContext(), data.getData())))
+			    .toString();
 		}
 		Log.d(TAG, path);
 		final GCAccountMediaModel model = new GCAccountMediaModel();
-		path = Uri.fromFile(new File(path)).toString();
 		model.setLargeUrl(path);
 		model.setThumbUrl(path);
 		model.setUrl(path);
