@@ -25,16 +25,16 @@ public class PhotoPickerPlusTutorialActivity extends Activity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.photo_picker_plus_activity);
 
-	findViewById(R.id.btnPhotoPicker).setOnClickListener(new OnChooseClickListener());
+	findViewById(R.id.btnPhotoPicker).setOnClickListener(new OnPhotoPickerClickListener());
 	image = (ImageView) findViewById(R.id.imageView);
 	
     }
 
-    private class OnChooseClickListener implements OnClickListener {
+    private class OnPhotoPickerClickListener implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-	    PhotoPickerPlusIntentWrapper.startSlideChute(PhotoPickerPlusTutorialActivity.this);
+	    PhotoPickerPlusIntentWrapper.startPhotoPicker(PhotoPickerPlusTutorialActivity.this);
 	}
     }
 

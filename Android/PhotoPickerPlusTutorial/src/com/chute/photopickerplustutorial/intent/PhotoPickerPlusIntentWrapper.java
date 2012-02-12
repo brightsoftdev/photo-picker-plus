@@ -15,7 +15,7 @@ public class PhotoPickerPlusIntentWrapper extends IntentWrapper {
         super(intent);
     }
 
-    public static void startSlideChute(Activity context) {
+    public static void startPhotoPicker(Activity context) {
         context.startActivityForResult(new Intent(context, ChooseServiceActivity.class), REQUEST_CODE);
     }
 
