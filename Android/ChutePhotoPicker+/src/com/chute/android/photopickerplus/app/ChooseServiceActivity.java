@@ -59,7 +59,7 @@ public class ChooseServiceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.service_layout);
-	
+
 	loader = ImageLoader.get(ChooseServiceActivity.this);
 
 	txtFacebook = (TextView) findViewById(R.id.txt_facebook);
@@ -186,6 +186,7 @@ public class ChooseServiceActivity extends Activity {
 		}
 		Log.d(TAG, path);
 		final GCAccountMediaModel model = new GCAccountMediaModel();
+		path = Uri.fromFile(new File(path)).toString();
 		model.setLargeUrl(path);
 		model.setThumbUrl(path);
 		model.setUrl(path);

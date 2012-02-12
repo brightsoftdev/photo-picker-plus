@@ -1,8 +1,10 @@
 package com.chute.android.photopickerplus.app;
 
+import java.io.File;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -74,19 +76,21 @@ public class PhotoStreamActivity extends Activity {
 	@Override
 	public void onItemClick(final AdapterView<?> parent, final View view, final int position,
 		final long id) {
-		IntentUtil.deliverDataToInitialActivity(PhotoStreamActivity.this, getPhotoModel(gridAdapter.getItem(position)));
+	    IntentUtil.deliverDataToInitialActivity(PhotoStreamActivity.this,
+		    getPhotoModel(gridAdapter.getItem(position)));
 	    setResult(RESULT_OK);
 	    finish();
 	}
     }
-    
-    public GCAccountMediaModel getPhotoModel(final String path) {
-    	final GCAccountMediaModel model = new GCAccountMediaModel();
-    	model.setLargeUrl(path);
-    	model.setThumbUrl(path);
-    	model.setUrl(path);
-    	return model;
-    	
+
+    public GCAccountMediaModel getPhotoModel(String path) {
+	final GCAccountMediaModel model = new GCAccountMediaModel();
+	path = Uri.fromFile(new File(path)).toString();
+	model.setLargeUrl(path);
+	model.setThumbUrl(path);
+	model.setUrl(path);
+	return model;
+
     }
 
 }
