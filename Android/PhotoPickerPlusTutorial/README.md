@@ -76,7 +76,6 @@ In this way the developer can initialize other utility classes by just overridin
 PhotoPickerPlusTutorialApp can also extend Application:
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends Application {
-
     public static final String TAG = PhotoPickerPlusTutorialApp.class.getSimpleName();
 
     private static ImageLoader createImageLoader(Context context) {
@@ -112,7 +111,6 @@ PhotoPickerPlusTutorialApp can be also neglected by registering PhotoPickerPlusA
 This class is an Activity class. It contains a Button and an ImageView. When the button is clicked, PhotoPickerPlusIntentWrapper starts ChooseServiceActivity. PhotoPickerPlusIntentWrapper is a wrapper class that wraps the parameters needed for the intent.
 <code><pre>
 private class OnPhotoPickerClickListener implements OnClickListener {
-
 	@Override
 	public void onClick(View v) {
 	    PhotoPickerPlusIntentWrapper.startPhotoPicker(PhotoPickerPlusTutorialActivity.this);
