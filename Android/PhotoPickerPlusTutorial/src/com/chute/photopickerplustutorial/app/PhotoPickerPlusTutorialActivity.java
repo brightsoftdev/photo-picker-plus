@@ -1,24 +1,23 @@
 package com.chute.photopickerplustutorial.app;
 
-import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
-import com.chute.photopickerplustutorial.R;
-import com.chute.photopickerplustutorial.R.id;
-import com.chute.photopickerplustutorial.R.layout;
-import com.chute.photopickerplustutorial.intent.PhotoPickerPlusIntentWrapper;
-import com.darko.imagedownloader.ImageLoader;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
+import com.chute.photopickerplustutorial.R;
+import com.chute.photopickerplustutorial.intent.PhotoPickerPlusIntentWrapper;
+import com.darko.imagedownloader.ImageLoader;
+
 public class PhotoPickerPlusTutorialActivity extends Activity {
 
     public static final String TAG = PhotoPickerPlusTutorialActivity.class.getSimpleName();
-	private ImageView image;
+    private ImageView image;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class PhotoPickerPlusTutorialActivity extends Activity {
 
 	findViewById(R.id.btnPhotoPicker).setOnClickListener(new OnChooseClickListener());
 	image = (ImageView) findViewById(R.id.imageView);
-	
+
     }
 
     private class OnChooseClickListener implements OnClickListener {
@@ -47,5 +46,14 @@ public class PhotoPickerPlusTutorialActivity extends Activity {
 	final PhotoActivityIntentWrapper wrapper = new PhotoActivityIntentWrapper(data);
 	ImageLoader.get(this).displayImage(wrapper.getMediaModel().getUrl(), image);
 	Log.d(TAG, wrapper.toString());
+
+	String path;
+	Uri uri = Uri.parse(wrapper.getMediaModel().getUrl());
+	if (uri.getScheme().contentEquals("http")) {
+	    path = uri.toString();
+	} else {
+	    path = uri.getPath();
+	}
+	Log.d(TAG, "The Path or url of the file " + path);
     }
 }
