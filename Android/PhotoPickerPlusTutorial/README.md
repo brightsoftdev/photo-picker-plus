@@ -8,11 +8,11 @@ Setup
 ====
 
 * Follow the ProjectSetup tutorial that can be found and downloaded at  
-  [https://github.com/chute/chute-tutorials/tree/master/Android/ProjectSetup](https://github.com/chute/chute-tutorials/tree/master/Android/ProjectSetup).
+  [https://github.com/chute/chute-tutorials/tree/master/Android/ProjectSetup](https://github.com/chute/chute-tutorials/tree/master/Android/ProjectSetup) for a complete guide on how to setup the chute SDK.
   
-* Copy the resources into your project.
-
-* Register the activities into the AndroidManifest.xml file:
+* Add the PhotoPicker+ component to your project by either copying all the resources and source code or by adding it as an Android Library project
+  
+* The next thing you need to do is register the activities, services and the application class into the AndroidManifest.xml file:
 
     ```
         <application
@@ -20,6 +20,7 @@ Setup
         android:label="@string/app_name"
         android:name=".app.PhotoPickerPlusTutorialApp"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
+		
         <service android:name="com.chute.sdk.api.GCHttpService" />
 
         <activity
@@ -65,19 +66,18 @@ Usage
 ====
 
 ##PhotoPickerPlusTutorialApp.java 
-This class is the Application class. It is registered using the "application" tag in the manifest and is used for initializing utility classes such as SharedPreferences, ImageLoader etc. 
+This class is the extended Application class. It is registered inside the "application" tag in the manifest and is used for initializing the utility classes used in the component
 PhotoPickerPlusTutorialApp can extend PhotoPickerPlusApp like shown in this tutorial:
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends PhotoPickerPlusApp {
 
 }
 </pre></code>
-In this way the developer can initialize other utility classes by just overriding the onCreate() method. 
-PhotoPickerPlusTutorialApp can also extend Application:
+This way the developer can use his own methods and code inside the application class. 
+
+If the developer decides to extend the application class instead of PhotoPickerPlusApp he must copy the all the code below into it:
 <code><pre>
 public class PhotoPickerPlusTutorialApp extends Application {
-
-    public static final String TAG = PhotoPickerPlusTutorialApp.class.getSimpleName();
 
     private static ImageLoader createImageLoader(Context context) {
 	ImageLoader imageLoader = new ImageLoader(context, R.drawable.placeholder);
@@ -106,7 +106,7 @@ public class PhotoPickerPlusTutorialApp extends Application {
 
 }
 </pre></code>
-PhotoPickerPlusTutorialApp can be also neglected by registering PhotoPickerPlusApp into the manifest instead of PhotoPickerPlusTutoiralApp.
+PhotoPickerPlusTutorialApp can also be neglected by registering PhotoPickerPlusApp into the manifest instead of PhotoPickerPlusTutoiralApp if the developer doesn't have the need for extending the application class.
 
 ##PhotoPickerPlusTutorialActivity.java 
 This class is an Activity class. It contains a Button and an ImageView. When the button is clicked, PhotoPickerPlusIntentWrapper starts ChooseServiceActivity. PhotoPickerPlusIntentWrapper is a wrapper class that wraps the parameters needed for the intent.
@@ -120,7 +120,7 @@ private class OnPhotoPickerClickListener implements OnClickListener {
     }
 </pre></code>
 ChooseServiceActivity contains a list of services and device photos albums is shown. You can authenticate using Facebook, Flickr, Instagram and Picasa, browse albums and photos, browse device photos as well as take a photo with the camera. 
-After clicking a photo, we go back at PhotoPickerPlusTutorialActivity where the selected photo is displayed using the ImageLoader.
+After clicking a photo, a result is returned to the activity that started the component where the selected photo is displayed using the ImageLoader.
 <pre><code>
 @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -133,7 +133,7 @@ After clicking a photo, we go back at PhotoPickerPlusTutorialActivity where the 
 	Log.d(TAG, wrapper.toString());
     }
 </code></pre>
-PhotoActivityIntentWrapper displays the selected photo data as GCAccountMediaModel.
+PhotoActivityIntentWrapper encapsulates a couple of different information available for the selected image. Keep in mind that some of that additional info might be null depending of its availability. Also the different paths inside the Media model can point to the same location if there are no additional sizes available.
 
 
     
