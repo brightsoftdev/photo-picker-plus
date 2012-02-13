@@ -119,7 +119,7 @@ public class ChooseServiceActivity extends Activity {
 	public void onClick(View v) {
 	    accountType = (AccountType) v.getTag();
 	    if (PreferenceUtil.get().hasAccountId(accountType)) {
-		accountClicked(PreferenceUtil.get().getAccountId(accountType));
+		accountClicked(PreferenceUtil.get().getAccountId(accountType), accountType.getName());
 	    } else {
 		GCAccountStore.getInstance(getApplicationContext()).startAuthenticationActivity(
 			ChooseServiceActivity.this, accountType, Constants.PERMISSIONS_SCOPE,
@@ -140,7 +140,7 @@ public class ChooseServiceActivity extends Activity {
 		    PreferenceUtil.get().setNameForAccount(accountType,
 			    accountModel.getUser().getName());
 		    PreferenceUtil.get().setIdForAccount(accountType, accountModel.getId());
-		    accountClicked(accountModel.getId());
+		    accountClicked(accountModel.getId(), accountType.getName());
 		}
 	    }
 	}
@@ -159,10 +159,11 @@ public class ChooseServiceActivity extends Activity {
 
     }
 
-    public void accountClicked(String accountId) {
+    public void accountClicked(String accountId, String accountName) {
 	AlbumsActivityIntentWrapper wrapper = new AlbumsActivityIntentWrapper(
 		ChooseServiceActivity.this);
 	wrapper.setAccountId(accountId);
+	wrapper.setAccountName(accountName);
 	wrapper.startActivity(ChooseServiceActivity.this);
     }
 

@@ -3,7 +3,6 @@ package com.chute.android.photopickerplus.util.intent;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.UserDictionary;
 
 import com.chute.android.photopickerplus.app.AlbumsActivity;
 
@@ -14,6 +13,7 @@ public class AlbumsActivityIntentWrapper {
 			.getSimpleName();
 
 	private static final String KEY_ACCOUNT_ID = "accountId";
+	private static final String KEY_ACCOUNT_NAME = "accountName";
 
 	private final Intent intent;
 
@@ -43,7 +43,15 @@ public class AlbumsActivityIntentWrapper {
 	public void setAccountId(String accountId) {
 		intent.putExtra(KEY_ACCOUNT_ID, accountId);
 	}
-	
+
+	public String getAccountName() {
+		return intent.getExtras().getString(KEY_ACCOUNT_NAME);
+	}
+
+	public void setAccountName(String accountName) {
+		intent.putExtra(KEY_ACCOUNT_NAME, accountName);
+	}
+
 	public void startActivity(Activity context) {
 		context.startActivity(intent);
 	}
