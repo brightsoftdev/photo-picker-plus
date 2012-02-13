@@ -312,6 +312,10 @@ body {
   color: #b1b3b5 !important;
   text-shadow: 1px 1px #000;  
 }
+  .footer a:hover {
+    color: #fff !important;
+  }
+
 .footer li {
   font-size: 16px;
 }
