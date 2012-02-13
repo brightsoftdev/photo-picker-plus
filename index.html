@@ -1,88 +1,173 @@
 <!DOCTYPE html>
-<html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset='utf-8'>
+	<meta charset="utf-8" />
 
-  <title>chute/photo-picker-plus @ GitHub</title>
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #38f16c;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #c70e93; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #c70e93; }
-    h3 { text-align: center; color: #c70e93; }
-    a { color: #c70e93; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<title>Photo Picker + by Chute</title>
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="stylesheets/foundation.css">
+	<link rel="stylesheet" href="stylesheets/app.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
 </head>
-
 <body>
-  <a href="https://github.com/chute/photo-picker-plus"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<!-- container -->
+	<div class="container">
+    <!-- header -->
+		<div class="row header">
+			<div class="two columns offset-by-one">
+			  <div class="logo">chute</div>
+			</div>
+			<div class="six columns"></div>
+			<div class="two columns actions">
+			  <a href="#" class="sign_up">sign up</a>
+			</div>
+			<div class="one columns"></div>
+		</div>
+		
+		<!-- feature -->
+		<div class="row feature">
+		  <div class="ten columns offset-by-one">
+		    <img src="images/misc/phones.png" />
+			  
+			  <h1>Photo Picker <strong>+</strong></h1>
+			  <h2>Add a Connected Photo Picker to Your App</h2>
+			  
+			  <a href="https://github.com/chute/photo-picker-plus" class="download_now">Download Now</a>			  
+			</div>
+		</div>
+		
+		<!-- Sub-Feature -->
+		<div class="row sub-feature">
+		  <div class="five columns offset-by-one">
+		    <p>Let your users upload photos in your app from any of their favorite photo services, not just photos they have stored locally.</p>
+		    <div class="row">
+		      <div class="six columns">
+		        <h4>Supported Services</h4>
+		        <div class="services">facebook | flickr | picasa | instagram</div>
+		      </div>
+		      <div class="six columns">
+		        <h4>Cross Platform</h4>
+		        <div class="platform">ios | android</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="four columns offset-by-one">
+		  </div>
+		</div>
 
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/chute/photo-picker-plus/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/chute/photo-picker-plus/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+		<!-- Installation Guide -->
+		<div class="row guide">
+      <div class="ten columns centered">
+        <h2>Installation Guide</h2>
+        
+        <div class="steps">
+          <ol>
+            <li class="active"><a href="#download"><div class="step_count">1</div>Download</a></li>
+            <li><a href="#key"><div class="step_count">2</div>Get Key</a></li>
+            <li><a href="#install"><div class="step_count">3</div>Install</a></li>
+            <li><a href="#run"><div class="step_count">4</div>Run</a></li>
+          </ol>
+          
+          <div class="contents">
+            <div id="download" class="content active">
+              <div class="row" style="padding: 40px 0">
+                <p style="text-align:center;">You can download Photo Picker+ from <a href="https://github.com/chute/photo-picker-plus" target="_blank">Github</a></p>
+                <a href="https://github.com/chute/photo-picker-plus" target="_blank" class="download_plus">Download Photo Picker+</a>
+              </div>
+            </div>
+            <div id="key" class="content">
+              <div class="row">
+                <img src="images/misc/getkey.png" class="screenshot" align="left" />
+                <p>To use Photo Picker+, you need to create a free Chute Application.</p>
+                <p><a href="http://apps.getchute.com/new" class="get_app">Get Your App Key Now</a></p>
+              </div>
+            </div>
+            <div id="install" class="content">
+              <div class="row">
+                <img src="images/misc/install-ios.png" class="screenshot" align="left" />
+                <p>Installing for iOS is as simple as dragging in the Library.</p>
+              </div>
+            </div>
+            <div id="run" class="content">
+              This is the content
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+	</div>
+	<!-- container -->
 
-    <h1><a href="https://github.com/chute/photo-picker-plus">photo-picker-plus</a>
-      <span class="small">by <a href="https://github.com/chute">chute</a></span></h1>
+  <div class="footer">
+    <div class="row">
+      <div class="three columns offset-by-one">
+        <h5>About Us</h5>
+        <hr />
+        <p>Chute is a platform which helps apps &amp; sites create, manage and present media files</p>
+      </div>
 
-    <div class="description">
-      Repo for Photo Picker Plus by Chute
+      <div class="four columns">
+        <h5>Get In Touch</h5>
+        
+        <hr />
+        
+        <form>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Email" />
+          <textarea rows="3" placeholder="Your Message"></textarea>
+          <input type="submit" value="Send" class="send" />
+        </form>
+      </div>
+
+      <div class="three columns">
+        <h5>Find Us Online</h5>
+        
+        <hr />
+        
+        <ul>
+          <li class="iconed facebook"><a href="#">Facebook</a></li>
+          <li class="iconed twitter"><a href="http://twitter.com/getchute">Twitter</a></li>
+          <li class="iconed tumblr"><a href="#">Tumblr</a></li>
+        </ul>
+
+        <br />
+        
+        <h5>Contact Us</h5>
+        
+        <hr />
+        
+        <ul>
+          <li class="iconed email"><a href="mailto:hello@getchute.com">hello@getchute.com</a></li>
+          <li class="iconed phone"><a href="#">415.729. 5499</a></li>
+        </ul>
+      </div>
+      <div class="one columns"></div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>costonb (costonb@gmail.com)<br/>darko1002001 (darkogrozdanovski@gmail.com)<br/>Gregarious Narain (gregarious@getchute.com)<br/>Olga Lazarova (olahla@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Chute (gregarious@getchute.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/chute/photo-picker-plus/zipball/master">zip</a> or
-      <a href="https://github.com/chute/photo-picker-plus/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/chute/photo-picker-plus</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/chute/photo-picker-plus">chute/photo-picker-plus</a>
-    </div>
-
   </div>
 
+	<!-- Included JS Files -->
+	<script src="javascripts/jquery.min.js"></script>
+	<script src="javascripts/modernizr.foundation.js"></script>
+	<script src="javascripts/foundation.js"></script>
+	<script src="javascripts/app.js"></script>
 </body>
 </html>

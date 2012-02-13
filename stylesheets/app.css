@@ -1,0 +1,380 @@
+/* Foundation v2.1.5 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Fonts
+:: Shared Styles
+:: Photo Picker+ Home
+*/
+
+/* -----------------------------------------
+   Fonts
+----------------------------------------- */
+@font-face {
+	font-family: 'Piron';
+	src: url('fonts/piron-webfont.eot');
+	src: url('fonts/piron-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/piron-webfont.woff') format('woff'),
+	     url('fonts/piron-webfont.ttf') format('truetype'),
+	     url('fonts/piron-webfont.svg#webfonte6WetEE9') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlab300';
+    src: url('fonts/museo_slab_300-webfont.eot');
+    src: url('fonts/museo_slab_300-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo_slab_300-webfont.woff') format('woff'),
+         url('fonts/museo_slab_300-webfont.ttf') format('truetype'),
+         url('fonts/museo_slab_300-webfont.svg#MuseoSlab300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSlab500';
+    src: url('fonts/museo_slab_500-webfont.eot');
+    src: url('fonts/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo_slab_500-webfont.woff') format('woff'),
+         url('fonts/museo_slab_500-webfont.ttf') format('truetype'),
+         url('fonts/museo_slab_500-webfont.svg#MuseoSlab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MuseoSlab700';
+    src: url('fonts/museo_slab_700-webfont.eot');
+    src: url('fonts/museo_slab_700-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo_slab_700-webfont.woff') format('woff'),
+         url('fonts/museo_slab_700-webfont.ttf') format('truetype'),
+         url('fonts/museo_slab_700-webfont.svg#MuseoSlab700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+/* -----------------------------------------
+   Photo Picker+ Home
+----------------------------------------- */
+body {
+  background: #f6f6f6 url(../images/misc/header-bg.png) repeat-x top left;
+}
+
+.header {
+  height: 70px;
+  line-height: 70px;
+  overflow: hidden;
+}
+  .header .logo {
+    color: #404656;
+    font-family: 'Piron';
+    font-size: 40px;
+  }
+  .header .actions {
+    text-align: right;
+  }
+    .header .actions .sign_up {
+      background: url(../images/misc/buttons.png) no-repeat -819px 0px;
+      display: inline-block;
+      font-size: 0px;
+      height: 33px;
+      margin-top: 17px;
+      text-indent: -1000px;
+      width: 102px;
+    }
+    .header .actions .sign_up:hover {
+      background-position: -819px -33px;
+    }
+    .header .actions .sign_up:active {
+      background-position: -819px -66px;
+    }
+    
+.feature {
+  font-family: MuseoSlab500;
+  height: 370px;
+  position: relative; 
+}
+  .feature h1 {
+    border-bottom: 1px solid #5f94b9;
+    color: #fff;
+    font-size: 60px;
+    font-weight: normal;
+    margin: 36px 0 0 0;
+    text-shadow: 1px 1px #5688ad;
+    width: 520px;
+  }
+    .feature h1 strong {
+      left: -10px;
+      position: relative;
+      top: -10px;
+    }
+  .feature h2 {
+    border-top: 1px solid #b7d3e3;
+    color: #4580aa;
+    font-family: MuseoSlab300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 24px;
+    padding-top: 24px;
+    text-shadow: 1px 1px rgba(255,255,255,0.5);
+    width: 520px;
+  }
+  .feature img {
+    position: absolute;
+    right: -235px;
+    z-index: 10;
+  }
+  .feature .download_now {
+    background: url(../images/misc/buttons.png) no-repeat 0 0;
+    display: inline-block;
+    font-size: 0;
+    height: 60px;
+    text-indent: -600px;
+    width: 325px;
+  }
+    .feature .download_now:hover {
+      background-position: 0 -61px;
+    }
+    .feature .download_now:active {
+      background-position: 0 -122px;
+    }
+
+.sub-feature {
+  height: 255px;
+  overflow: hidden;
+}    
+
+.sub-feature p {
+  color: #5e5e5e;
+  font-family: MuseoSlab500;
+  font-size: 19px;
+  line-height: 30px;
+  margin-top: 30px;
+}
+.sub-feature h4 {
+  color: #696969;
+  font-family: MuseoSlab700;
+  font-size: 14px;
+  font-weight: normal;
+}
+.sub-feature .services {
+  background: url(../images/misc/buttons.png) no-repeat -925px 0;
+  font-size: 0px;
+  height: 33px;
+  text-indent: -1000px;
+  width: 166px;
+}
+.sub-feature .platform {
+  background: url(../images/misc/buttons.png) no-repeat -1101px 0;
+  font-size: 0px;
+  height: 34px;
+  text-indent: -1000px;
+  width: 170px;
+}
+
+.guide {
+  margin-bottom: 40px;
+}
+.guide h2 {
+  color: #1d81af;
+  font-family: MuseoSlab500;
+  font-size: 28px;
+  font-weight: normal;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.guide .steps {
+  margin-top: 24px;
+  position: relative;
+  text-align: center;
+}
+  .guide .steps ol {
+    margin: 0px;
+  }
+  .guide .steps li {
+    display: inline-block;
+    margin: 0 5%;    
+  }
+    .guide .steps li .step_count {
+      background: #fff;
+      border: 4px solid #afafaf;
+      border-radius: 30px;
+        -webkit-border-radius: 30px;
+      box-shadow: 0px 1px 3px #000;
+      color: #666;
+      height: 40px;
+      line-height: 40px;
+      margin: 10px auto;
+      width: 40px;
+    }
+      .guide .steps li.active .step_count {
+        border-color: #229ad1;        
+      }
+      
+    .guide .steps li a {
+      color: #dbdbdb;
+      font-family: MuseoSlab700;
+      font-size: 16px;
+      font-weight: normal;
+    }
+      .guide .steps li a:hover, .guide .steps li.active a {
+        color: #000;
+      }
+
+  .guide .steps .contents {
+    background: #fff;
+    border-radius: 3px;
+      -webkit-border-radius: 3px;
+    box-shadow: inset 0px 1px 3px #aaa;
+      -webkit-border-radius: inset 0px 1px 3px #aaa;
+    margin-top: -52px;
+    padding: 80px 10px 40px 10px;
+  }
+    .guide .steps .content {
+      display: none;
+      min-height: 200px;
+      padding: 20px 0;
+    }
+      .guide .steps .content.active {
+        display: block;
+      }
+    .guide .steps .content p {
+      color: #545454;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      text-align: left;
+    }
+    .guide .steps .screenshot {
+      border: 1px solid #b8b9b8;
+      box-shadow: 1px 1px 3px #ccc;
+      margin: 0 15px 0 10px;
+    }
+  
+  .download_plus {
+    background: url(../images/misc/buttons.png) no-repeat -323px 0;
+    display: inline-block;
+    font-size: 0;
+    height: 50px;
+    text-indent: -600px;
+    width: 270px;
+  }
+    .download_plus:hover {
+      background-position: -323px -51px;
+    }
+    .download_plus:active {
+      background-position: -323px -102px;
+    }
+  
+  .get_app {
+    background: url(../images/misc/buttons.png) no-repeat -594px 0;
+    display: inline-block;
+    font-size: 0;
+    height: 49px;
+    text-indent: -600px;
+    width: 219px;
+  }
+    .get_app:hover {
+      background-position: -594px -49px;
+    }
+    .get_app:active {
+      background-position: -594px -98px;
+    }
+
+.footer {
+  background: url(../images/misc/footer-bg.png);
+  color: #b1b3b5;
+  font-size: 18px;
+  font-family: MuseoSlab500;
+  padding: 40px;
+}
+  .footer hr {
+    background: #181a1e;
+    border: 0px !important;
+    border-bottom: 1px solid #4a4e54 !important;
+    height: 1px;
+    overflow: hidden;
+  }
+.footer h5, .footer a {
+  color: #b1b3b5 !important;
+  text-shadow: 1px 1px #000;  
+}
+.footer li {
+  font-size: 16px;
+}
+  .footer li.iconed {
+    background: url(../images/misc/buttons.png) no-repeat -1352px 0;
+    height: 16px;
+    width: 16px;
+  }
+    .footer li.iconed.facebook {
+      background-position: -1352px 0;
+    }
+    .footer li.iconed.twitter {
+      background-position: -1370px 0;
+    }
+    .footer li.iconed.tumblr {
+      background-position: -1388px 0;
+    }
+    .footer li.iconed.email {
+      background-position: -1409px 0;
+    }
+    .footer li.iconed.phone {
+      background-position: -1427px 0;
+    }
+    .footer li.iconed a {
+      display: block;
+      font-size: 13px;
+      font-weight: normal;
+      line-height: 16px;
+      margin-left: 24px;
+      white-space: nowrap;
+    }
+
+.footer input[type='text'], .footer textarea {
+  background: #24262b;
+  border: 0px;
+  border-radius: 3px;
+    -webkit-border-radius: 3px;
+  border-bottom: 1px solid #4a4e54;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
+  color: #494b4f !important;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px !important;
+  margin-bottom: 10px !important;
+  outline: none;
+  padding: 5px 0 5px 5px;
+  overflow: auto;
+  width: 100%;
+}
+.footer textarea {
+  margin-right: 5px;
+}
+.footer .send {
+  background: url(../images/misc/buttons.png) no-repeat -1273px -30px;
+  border: 0px;
+  font-size: 0px;
+  height: 28px;
+  text-indent: -600px;
+  width: 72px;
+}
+  .footer .send:hover {
+    background-position: -1273px 0px;  
+  }
+  .footer .send:active {
+    background-position: -1273px -60px;  
+  }
