@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.chute.android.photopickerplus.R;
 import com.chute.android.photopickerplus.adapter.AlbumsAdapter;
+import com.chute.android.photopickerplus.util.AppUtil;
 import com.chute.android.photopickerplus.util.NotificationUtil;
 import com.chute.android.photopickerplus.util.intent.AlbumsActivityIntentWrapper;
 import com.chute.android.photopickerplus.util.intent.PhotoActivityIntentWrapper;
@@ -38,7 +39,7 @@ public class AlbumsActivity extends Activity {
 	wrapper = new AlbumsActivityIntentWrapper(getIntent());
 	
 	TextView title = (TextView) findViewById(R.id.title);
-	String albumName = asUpperCaseFirstChar(wrapper.getAccountName().concat(" Albums"));
+	String albumName = AppUtil.asUpperCaseFirstChar(wrapper.getAccountName().concat(" Albums"));
 	title.setText(albumName);
 
 	GCAccounts.objects(getApplicationContext(), wrapper.getAccountId(), new ObjectsCallback())
@@ -102,12 +103,4 @@ public class AlbumsActivity extends Activity {
 	}
     }
     
-    public final static String asUpperCaseFirstChar(final String target) {
-
-        if ((target == null) || (target.length() == 0)) {
-            return target; 
-        }
-        return Character.toUpperCase(target.charAt(0))
-                + (target.length() > 1 ? target.substring(1) : "");
-    }
 }
