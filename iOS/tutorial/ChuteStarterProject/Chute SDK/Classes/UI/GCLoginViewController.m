@@ -44,7 +44,7 @@
     [params setValue:@"profile" forKey:@"scope"];
     [params setValue:@"web_server" forKey:@"type"];
     [params setValue:@"code" forKey:@"response_type"];
-    [params setValue:kOAuthClientID forKey:@"client_id"];
+    [params setValue:kOAuthAppID forKey:@"client_id"];
     [params setValue:kOAuthCallbackURL forKey:@"redirect_uri"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/oauth/%@?%@", 
@@ -64,7 +64,7 @@
     [params setValue:@"profile" forKey:@"scope"];
     [params setValue:@"web_server" forKey:@"type"];
     [params setValue:@"code" forKey:@"response_type"];
-    [params setValue:kOAuthClientID forKey:@"client_id"];
+    [params setValue:kOAuthAppID forKey:@"client_id"];
     [params setValue:kOAuthCallbackURL forKey:@"redirect_uri"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/oauth/%@?%@", 

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  PhotoPickerPlus
+//  ChuteStarterProject
 //
-//  Created by Brandon Coston on 2/7/12.
+//  Created by Brandon Coston on 2/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

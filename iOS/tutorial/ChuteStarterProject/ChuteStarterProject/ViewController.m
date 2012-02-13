@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  PhotoPickerPlus
+//  ChuteStarterProject
 //
-//  Created by Brandon Coston on 2/7/12.
+//  Created by Brandon Coston on 2/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -20,12 +20,12 @@
     }];
 }
 
--(void) photoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
+-(void) PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
     [self dismissViewControllerAnimated:YES completion:^(void){
         
     }];
 }
--(void) photoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void) PhotoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:^(void){
         [[self imageView] setImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
     }];

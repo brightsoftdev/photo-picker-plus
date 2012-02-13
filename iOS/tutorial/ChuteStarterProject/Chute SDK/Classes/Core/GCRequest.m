@@ -18,7 +18,7 @@
             kUDID, @"x-device-identifier",
             kDEVICE_OS, @"x-device-os",
             kDEVICE_VERSION, @"x-device-version",
-            kOAuthClientID, @"x-client_id",
+            kOAuthAppID, @"x-client_id",
             [NSString stringWithFormat:@"OAuth %@", [[GCAccount sharedManager] accessToken]], @"Authorization",
             nil];
 }

@@ -8,7 +8,7 @@
 #define ChuteMacros_h
 
 //Comment this line to stop debug log on the debugger console.
-#define DEBUG
+//#define DEBUG
 
 @class GCResponse;
 

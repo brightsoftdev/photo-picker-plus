@@ -1,5 +1,5 @@
-Photo Picker+
-=============
+Chute Starter Project Tutorial
+==============================
 
 This tutorial will show you how to use the Photo Picker Plus component to present the user with a multi-service photo picker.  This tutorial was written using version 5.0 of the iOS SDK and version 4.2 of Xcode.  Uses Chute SDK version 1.0.4 or newer (the version number can be found in the GCConstants.h file).  Some changes may need to be made for other software versions.
 
@@ -46,7 +46,7 @@ The next step is to enter your chute app information in the GCConstants.h file. 
 
 Set ViewController As Delegate And Add Objects/Methods
 -----------------------------------------------
-In your viewController.h file import PhotoPickerPlus.h and set up the class as a photoPickerPlusDelegate.  Then add an object for the image view and a method for pressing the pick photo button.  This should look similar to this
+In your viewController.h file import PhotoPickerPlus.h and set up the class as a PhotoPickerPlusDelegate.  Then add an object for the image view and a method for pressing the pick photo button.  This should look similar to this
 
 viewController.h
 
@@ -54,7 +54,7 @@ viewController.h
 	#import <UIKit/UIKit.h>
 	#import "PhotoPickerPlus.h"
 
-	@interface ViewController : UIViewController <photoPickerPlusDelegate>
+	@interface ViewController : UIViewController <PhotoPickerPlusDelegate>
 
 	@property (nonatomic, readonly) IBOutlet UIImageView *imageView;
 
@@ -84,17 +84,17 @@ viewController.m
 
 Write The Delegate Methods
 --------------------------
-The  photoPickerPlusDelegate methods are photoPickerPlusControllerDidCancel: and photoPickerPlusController:didFinishPickingMediaWithInfo:.  These work exactly the same as the UIImagePickerController delegate methods to make things easier.  You can refer to Apple's documentation on UIImagePickerControllerDelegate to see what the keys in the dictionary are.  The only one we are going to be concerned with is UIImagePickerControllerOriginalImage.  So our cancel method will just dismiss the picker and our success method will display the image in the imageView and dismiss the picker.  The code for these methods is
+The  PhotoPickerPlusDelegate methods are PhotoPickerPlusControllerDidCancel: and PhotoPickerPlusController:didFinishPickingMediaWithInfo:.  These work exactly the same as the UIImagePickerController delegate methods to make things easier.  You can refer to Apple's documentation on UIImagePickerControllerDelegate to see what the keys in the dictionary are.  The only one we are going to be concerned with is UIImagePickerControllerOriginalImage.  So our cancel method will just dismiss the picker and our success method will display the image in the imageView and dismiss the picker.  The code for these methods is
 
 viewController.m
 
 ```
-	-(void) photoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
+	-(void) PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
 	    [self dismissViewControllerAnimated:YES completion:^(void){
         
 	    }];
 	}
-	-(void) photoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+	-(void) PhotoPickerPlusController:(PhotoPickerPlus *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
 	    [self dismissViewControllerAnimated:YES completion:^(void){
 	        [[self imageView] setImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
 	    }];
@@ -103,10 +103,10 @@ viewController.m
 
 Create The UI
 -------------
-Open viewController.xib and add an UIImageView covering most of the view and a UIButton below it.  Hook the UIImageView up to the imageView object and hook up the pickPhotoSelected method to the touchUpInside event of the button.  You can also title the button whatever you want.  I called mine pick photo.  You also probably want to set the mode for the UIImageView to aspectFit.
+Open viewController.xib and add an UIImageView covering most of the view and a UIButton below it.  Hook the UIImageView up to the imageView object and hook up the pickPhotoSelected method to the touchUpInside event of the button.  You do this by right clicking on the file's owner and dragging from the circle for the outlet or action that you want to it's corresponding object either in the object's list or in the view itself.  You can set the title for the button whatever you want by selecting it then changing it's title in the attribute inspector on the right side of the screen.  I called mine Pick Photo.  You also probably want to set the mode for the UIImageView to aspectFit which is accessed from the attribute inspector for the UIImageView.
 
 ![image8](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/8.png)
 
 Conclusion
 ----------
-You should have a fully working app now that allows you to take a photo, pick an image from the device, or pick an image from a variety of online sources.  Due to the picker accessing the ALAssets it will present the user with a dialog asking if they want to allow location services.  This is due to ALAssets having location data associated with the images.  If the user declines then the picker will not allow them to choose images on the device.
+You should have a fully working app now that allows you to take a photo, pick an image from the device, or pick an image from a variety of online sources.  Due to the picker accessing the ALAssets it will present the user with a dialog asking if they want to allow location services.  This is because ALAssets have location data associated with the images.  If the user declines then the picker will not allow them to choose images that are on the device however all other sources should still work.

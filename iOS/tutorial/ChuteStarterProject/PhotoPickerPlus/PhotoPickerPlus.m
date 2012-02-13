@@ -114,20 +114,20 @@
     [photoView removeFromSuperview];
     [albumView removeFromSuperview];
     [accountView removeFromSuperview];
-    if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusControllerDidCancel:)])
-        [delegate photoPickerPlusControllerDidCancel:self];
+    if(delegate && [delegate respondsToSelector:@selector(PhotoPickerPlusControllerDidCancel:)])
+        [delegate PhotoPickerPlusControllerDidCancel:self];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:^(void){
-        if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
-            [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:info];
+        if(delegate && [delegate respondsToSelector:@selector(PhotoPickerPlusController:didFinishPickingMediaWithInfo:)])
+            [delegate PhotoPickerPlusController:self didFinishPickingMediaWithInfo:info];
     }];
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:^(void){
-        if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusControllerDidCancel:)])
-            [delegate photoPickerPlusControllerDidCancel:self];
+        if(delegate && [delegate respondsToSelector:@selector(PhotoPickerPlusControllerDidCancel:)])
+            [delegate PhotoPickerPlusControllerDidCancel:self];
     }];
 }
 
@@ -214,7 +214,7 @@
     [params setValue:@"profile" forKey:@"scope"];
     [params setValue:@"web_server" forKey:@"type"];
     [params setValue:@"code" forKey:@"response_type"];
-    [params setValue:kOAuthClientID forKey:@"client_id"];
+    [params setValue:kOAuthAppID forKey:@"client_id"];
     [params setValue:kOAuthCallbackURL forKey:@"redirect_uri"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/oauth/%@?%@", 
@@ -239,8 +239,8 @@
             [temp setObject:[UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage] scale:1 orientation:(UIImageOrientation)[[asset defaultRepresentation] orientation]] forKey:UIImagePickerControllerOriginalImage];
             [temp setObject:[[asset defaultRepresentation] url] forKey:UIImagePickerControllerReferenceURL];
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
-                    [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
+                if(delegate && [delegate respondsToSelector:@selector(PhotoPickerPlusController:didFinishPickingMediaWithInfo:)])
+                    [delegate PhotoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
                 [self setAccounts:NULL];
                 [self setAlbums:NULL];
                 [self setPhotos:NULL];
@@ -293,8 +293,8 @@
             }
             [temp setObject:asset forKey:UIImagePickerControllerMediaMetadata];
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                if(delegate && [delegate respondsToSelector:@selector(photoPickerPlusController:didFinishPickingMediaWithInfo:)])
-                    [delegate photoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
+                if(delegate && [delegate respondsToSelector:@selector(PhotoPickerPlusController:didFinishPickingMediaWithInfo:)])
+                    [delegate PhotoPickerPlusController:self didFinishPickingMediaWithInfo:temp];
                 [self setAccounts:NULL];
                 [self setAlbums:NULL];
                 [self setPhotos:NULL];

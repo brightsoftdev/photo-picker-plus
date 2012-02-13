@@ -353,8 +353,8 @@ static GCAccount *sharedAccountManager = nil;
     
     NSDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:kOAuthPermissions forKey:@"scope"];
-    [params setValue:kOAuthClientID forKey:@"client_id"];
-    [params setValue:kOAuthClientSecret forKey:@"client_secret"];
+    [params setValue:kOAuthAppID forKey:@"client_id"];
+    [params setValue:kOAuthAppSecret forKey:@"client_secret"];
     [params setValue:@"authorization_code" forKey:@"grant_type"];
     [params setValue:kOAuthCallbackURL forKey:@"redirect_uri"];
     

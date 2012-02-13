@@ -6,7 +6,7 @@
 
 //////////////////////////////////////////////////////////
 //                                                      //
-//                   VERSION 1.120206                   //
+//                   VERSION 1.0.4                      //
 //                                                      //
 //////////////////////////////////////////////////////////
 
@@ -35,8 +35,8 @@
 //replace the following setting with your own client info
 #define kOAuthCallbackURL               @"http://getchute.com/oauth/callback"
 #define kOAuthCallbackRelativeURL       @"/oauth/callback"
-#define kOAuthClientID                  @"PUT_CLIENT_ID_HERE"
-#define kOAuthClientSecret              @"PUT_CLIENT_SECRET_HERE"
+#define kOAuthAppID                     @"PUT_CLIENT_ID_HERE"
+#define kOAuthAppSecret                 @"PUT_CLIENT_SECRET_HERE"
 
 #define kOAuthPermissions               @"all_resources manage_resources profile resources"
 

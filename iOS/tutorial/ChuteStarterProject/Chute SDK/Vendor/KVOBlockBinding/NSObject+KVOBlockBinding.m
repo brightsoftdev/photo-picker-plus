@@ -37,7 +37,7 @@
     valid = NO;
 }
 
-- (void)release 
+- (oneway void)release 
 {
     // If this release will reduce the retain count to zero, prevent further calls to the block
     if([self retainCount]==1 && valid)
