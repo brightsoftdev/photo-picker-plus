@@ -8,9 +8,9 @@ Photo Picker Plus is a drop-in component that replaces the default photo picker 
 Tutorials
 ---------
 
-[Adding PhotoPicker+ to an Existing Project](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/AddToExisting.md)
+[Adding PhotoPicker+ to an Existing Project](https://github.com/chute/photo-picker-plus/blob/master/iOS/tutorial/AddToExisting.md)
 
-[Creating a PhotoPicker+ Sample Project](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/ChuteStarterProject.md)
+[Creating a PhotoPicker+ Sample Project](https://github.com/chute/photo-picker-plus/blob/master/iOS/tutorial/ChuteStarterProject.md)
 
 Screens
 -------
