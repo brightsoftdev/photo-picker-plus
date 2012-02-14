@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "GetChute.h"
 
+enum {
+    PhotoPickerPlusSourceTypeNone,
+    PhotoPickerPlusSourceTypePhotoLibrary,
+    PhotoPickerPlusSourceTypeCamera,
+    PhotoPickerPlusSourceTypeService
+};
+typedef NSUInteger PhotoPickerPlusSourceType;
+
 @protocol PhotoPickerPlusDelegate;
 
 @interface PhotoPickerPlus : GCUIBaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIWebViewDelegate>
@@ -39,6 +47,9 @@
 
 @property (nonatomic, readonly) IBOutlet UIView *AddServiceView;
 @property (nonatomic, readonly) IBOutlet UIWebView *AddServiceWebView;
+
+//set to the source of the image selected
+@property (nonatomic, readonly) PhotoPickerPlusSourceType sourceType;
 
 
 @property (nonatomic) BOOL appeared;

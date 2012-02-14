@@ -1,7 +1,7 @@
 PhotoPickerPlus
 ==============
 
-no external dependancies beyond Chute SDK (version 1.120206 or newer)
+no external dependancies beyond Chute SDK (version 1.0.4 or newer)
 
 Description
 -----------
