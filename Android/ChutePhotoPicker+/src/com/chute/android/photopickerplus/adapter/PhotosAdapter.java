@@ -33,7 +33,7 @@ public class PhotosAdapter extends BaseAdapter {
 	    this.collection = collection;
 	}
 	inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	loader = ImageLoader.get(context);
+	loader = ImageLoader.getLoader(context);
 	displayMetrics = context.getResources().getDisplayMetrics();
 	// tick = new HashMap<Integer, GCAccountMediaModel>();
     }
