@@ -12,6 +12,8 @@ Preparation
 1.  Download the Chute SDK from https://github.com/chute/Chute-SDK/tree/master/iOS
 2.  Download the PhotoPickerPlus component from https://github.com/chute/photo-picker-plus/tree/master/iOS/PhotoPickerPlus
 3.  If you don't have a Chute developer account or an app created on chute for this project then create a Chute developer account and make a new app in Chute at http://apps.getchute.com/
+	*  For the URL you can enter http://getchute.com/ if you don't have a site for your app
+	*  For the Callback URL you can use http://getchute.com/oauth/callback if you don't need callbacks for another purpose.
 
 ![image5](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/5.png)
 ![image6](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/6.png)
@@ -34,13 +36,15 @@ Add The SDK And Component And Link Dependancies
 
 Edit Your App ID And Secret
 ---------------------------
-The next step is to enter your chute app information in the GCConstants.h file.  This file can be found at the root of the Chute SDK directory.  You will need to fill in your APP ID and APP secret from the summary tab of your admin panel.  You will also need to adjust the redirect URL to match the callback url from the admin panel.  Then set the redirect relative url to everything after the base in the callback url.
+The next step is to enter your chute app information in the GCConstants.h file.  This file can be found at the root of the Chute SDK directory.  You will need to fill in your APP ID and APP secret from the summary tab of your admin panel.  If you used a custom Redirect URL when setting up your app on Chute you will also need to adjust the `kOauthCallbackURL` to match the callback url you set.  Then set the `kOauthCallbackRelativeURL` to everything after the base in the callback url.  If you used `http://getchute.com/oauth/callback` then you can leave these as they are.
+
+![image8](https://github.com/chute/photo-picker-plus/raw/master/iOS/tutorial/screenshots/8.png)
 
 At this point you may want to try running the project to make sure that everything is added ok.  If it builds then everything should be correctly added and linked.
 
 Change your delegate
 --------------------
-In the header for the controller that will be using the component import the PhotoPickerPlus.h file and inherit the PhotoPickerPlusDelegate instead of the UIImagePickerDelegate protocol.
+In the header for the controller that will be using the component `#import "PhotoPickerPlus.h"` and inherit the `PhotoPickerPlusDelegate` instead of the `UIImagePickerDelegate` protocol.
 
 ```objective-c
 	#import <UIKit/UIKit.h>
@@ -55,7 +59,7 @@ In the header for the controller that will be using the component import the Pho
 
 Change The Delegate Methods
 ---------------------------
-In your class change imagePickerControllerDidCancel: to PhotoPickerPlusControllerDidCancel: and change imagePickerController:didFinishPickingMediaWithInfo: to PhotoPickerPlusController:didFinishPickingMediaWithInfo:.  You can leave the code in these methods exactly the same as you had before because the return values are the same format.  If you need to know which source the info came from you can call sourceType on the picker.
+In your class change `imagePickerControllerDidCancel:` to `PhotoPickerPlusControllerDidCancel:` and change `imagePickerController:didFinishPickingMediaWithInfo:` to `PhotoPickerPlusController:didFinishPickingMediaWithInfo:`.  You can leave the code in these methods exactly the same as you had before because the return values are the same format.  If you need to know which source the info came from you can call `sourceType` on the picker.
 
 ```objective-c
 	-(void) PhotoPickerPlusControllerDidCancel:(PhotoPickerPlus *)picker{
@@ -68,7 +72,7 @@ In your class change imagePickerControllerDidCancel: to PhotoPickerPlusControlle
 
 Displaying The Image Picker
 ---------------------------
-Finally replace the code to display the image picker.  Photo Picker Plus lets the user select a source for the image so you don't need to set it ahead of time.  The only other difference is that you should set your viewController's ModalPresentationStyle to UIModalPresentationCurrentContext for a non-navigation based project or set your navigationViewController's ModalPresentationStyle to UIModalPresentationCurrentContext for a  navigation based project.
+Finally replace the code to display the image picker.  Photo Picker Plus lets the user select a source for the image so you don't need to set it ahead of time.  The only other difference is that you should set your viewController's `ModalPresentationStyle` to `UIModalPresentationCurrentContext` for a non-navigation based project or set your navigationViewController's `ModalPresentationStyle` to `UIModalPresentationCurrentContext` for a navigation based project.
 
 ```objective-c
 	PhotoPickerPlus *temp = [[PhotoPickerPlus alloc] init];
