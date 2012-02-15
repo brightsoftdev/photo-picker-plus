@@ -1,7 +1,7 @@
 Introduction
 ====
 
-PhotoPicker+ is a component made for developers to easily integrate it inside their app and enable photo picking functionality. Enable browsing photos from services such as Facebook, Picasa, Instagram or Flickr, also take photos with the native camera application and choose photos from the users device.
+PhotoPicker+ is a component made for developers to easily integrate it inside their app and enable photo picking functionality. This component enables browsing photos from services such as Facebook, Picasa, Instagram or Flickr, also enables taking photos with the native camera application and choosing photos from the users device.
 
 
 Screenshots
