@@ -26,7 +26,7 @@ public class AlbumsAdapter extends BaseAdapter {
 	this.context = context;
 	this.collection = collection;
 	inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	loader = ImageLoader.get(context);
+	loader = ImageLoader.getLoader(context);
     }
 
     @Override

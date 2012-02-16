@@ -35,8 +35,8 @@
 //replace the following setting with your own client info
 #define kOAuthCallbackURL               @"http://getchute.com/oauth/callback"
 #define kOAuthCallbackRelativeURL       @"/oauth/callback"
-#define kOAuthAppID                     @"PUT_CLIENT_ID_HERE"
-#define kOAuthAppSecret                 @"PUT_CLIENT_SECRET_HERE"
+#define kOAuthAppID                     @"XXXXXXXXXXXXXXXXXXXXXXXX"
+#define kOAuthAppSecret                 @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 #define kOAuthPermissions               @"all_resources manage_resources profile resources"
 

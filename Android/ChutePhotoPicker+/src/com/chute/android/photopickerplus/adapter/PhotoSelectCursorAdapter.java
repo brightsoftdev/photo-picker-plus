@@ -37,7 +37,7 @@ public class PhotoSelectCursorAdapter extends CursorAdapter implements
 		super(context, c);
 		inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		loader = ImageLoader.get(context);
+		loader = ImageLoader.getLoader(context);
 		dataIndex = c.getColumnIndex(MediaStore.Images.Media.DATA);
 		displayMetrics = context.getResources().getDisplayMetrics();
 	}

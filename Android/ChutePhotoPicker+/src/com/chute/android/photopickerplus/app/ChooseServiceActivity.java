@@ -61,7 +61,7 @@ public class ChooseServiceActivity extends Activity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.service_layout);
 
-	loader = ImageLoader.get(ChooseServiceActivity.this);
+	loader = ImageLoader.getLoader(ChooseServiceActivity.this);
 
 	txtFacebook = (TextView) findViewById(R.id.txt_facebook);
 	txtFacebook.setTag(AccountType.FACEBOOK);
