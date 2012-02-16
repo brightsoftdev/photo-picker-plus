@@ -246,7 +246,7 @@ body {
   }
     .guide .steps .content {
       display: none;
-      min-height: 200px;
+      height: 250px;
       padding: 20px 0;
     }
       .guide .steps .content.active {
@@ -255,7 +255,7 @@ body {
     .guide .steps .content p {
       color: #545454;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       text-align: left;
     }
     .guide .steps .screenshot {
@@ -265,20 +265,64 @@ body {
     }
   
   .download_plus {
-    background: url(../images/misc/buttons.png) no-repeat -323px 0;
+    background: url(../images/misc/buttons.png) no-repeat -1681px 0;
     display: inline-block;
     font-size: 0;
-    height: 50px;
+    height: 42px;
     text-indent: -600px;
-    width: 270px;
+    width: 241px;
   }
     .download_plus:hover {
-      background-position: -323px -51px;
+      background-position: -1681px -42px;
     }
     .download_plus:active {
-      background-position: -323px -102px;
+      background-position: -1680px -84px;
     }
   
+  .download_sdk {
+    background: url(../images/misc/buttons.png) no-repeat -1440px 0;
+    display: inline-block;
+    font-size: 0;
+    height: 42px;
+    text-indent: -600px;
+    width: 241px;
+  }
+    .download_sdk:hover {
+      background-position: -1440px -42px;
+    }
+    .download_sdk:active {
+      background-position: -1439px -84px;
+    }
+
+  .ppp_ios {
+    background: url(../images/misc/buttons.png) no-repeat -2093px 0;
+    display: inline-block;
+    font-size: 0;
+    height: 42px;
+    text-indent: -600px;
+    width: 121px;
+  }
+    .ppp_ios:hover {
+      background-position: -2093px -42px;   
+    }
+    .ppp_ios:active {
+      background-position: -2093px -84px;   
+    }
+  .ppp_android {
+    background: url(../images/misc/buttons.png) no-repeat -2214px 0;
+    display: inline-block;
+    font-size: 0;
+    height: 42px;
+    text-indent: -600px;
+    width: 121px;
+  }
+    .ppp_android:hover {
+      background-position: -2214px -42px;   
+    }
+    .ppp_android:active {
+      background-position: -2213px -84px;   
+    }
+
   .get_app {
     background: url(../images/misc/buttons.png) no-repeat -594px 0;
     display: inline-block;
